@@ -2,12 +2,25 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Title</title>
+<title>Hello World</title>
 <script>
-
+    function generalOutput() {
+	// Get the user's data from the text field that has the id
+	// of "textInputBox" and store it in a variable named text
+	var text = document.getElementById("textInputBox").value;
+	
+	// Use string concatenation to create personalized output.
+	var stuff = "Hello " + text + ".";
+	
+	// Display the output in the div that has the id "outputDiv".
+	document.getElementById("outputDiv").innerHTML = stuff;
+}
 </script>
 </head>
 <body>
-<div id="outputDiv">Hello World</div>
+    
+    <div id="outputDiv">Hello World</div>
+    Please enter your name: <input type="text" id="textInputBox">
+    <button type="button" onclick="generalOutput()">Submit</button>
 </body>
 </html>
