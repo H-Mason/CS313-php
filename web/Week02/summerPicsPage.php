@@ -38,7 +38,7 @@
 <head>
    <meta charset="utf-8">
    <title>Mason Family Pictures</title>
-   <link rel="stylesheet" href="picsPage.css">
+   <link rel="stylesheet" href="HomePage.css">
    <script>
    </script>
    <style>
