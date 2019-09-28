@@ -1,10 +1,11 @@
 body {
-    background-image: url("ocean.jpg");
+    background-image: url("berries.jpg");
     background-size: cover;
     background-color: rgb(226, 237, 255);
+    text-align: center
  }
  header {
-    background-color: lightblue;
+    background-color: rgb(226, 237, 255, 0.75);
     text-align: center;
     padding: 5px;
  }
@@ -12,15 +13,15 @@ body {
     margin: auto;
     padding: 10px;
     border-style: outset;
-    background-color: lightblue;
+    background-color: rgb(226, 237, 255, 0.75);
     border-width: 2px;
-    border-color: rgb(240, 239, 239);
+    border-color: rgb(226, 237, 255, 0.75);
     border-radius: 5px;
     width: 35vw;
     height: 200px;
  }
  footer {
-    background-color: lightblue;
+    background-color: rgb(226, 237, 255, 0.75);
     padding: 5px;
  }
  #footerStuff {
@@ -58,10 +59,38 @@ body {
  }
  
  li a:hover {
-    background-color: rgb(83, 125, 193);
+    background-color: rgb(121, 149, 194);
     color: black;
  }
- img {
+ #famPic {
     float: right;
     height: 200px;
+ }
+ #aboutMe {
+    width: 35vw;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    border-style: outset;
+    background-color: rgb(226, 237, 255, 0.75);
+    font-family: verdana;
+    text-align: center;
+ }
+ #tripForm {
+    margin: auto;
+    background-color: rgb(226, 237, 255, 0.75);
+    font-family: verdana;
+    width: 40vw;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+  }
+  table {
+    margin: auto;
+    width: 20%;
+    text-align: center;
+ }
+ table.img {
+    height: 150px;
+    padding: 5px;
  }

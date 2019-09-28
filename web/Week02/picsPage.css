@@ -1,12 +1,10 @@
 body {
-    background-image: url("ocean.jpg");
+    background-image: url("berries.jpg");
     background-size: cover;
     text-align: center
  }
  header {
-    background-color: lightblue;
- }
- header {
+    background-color: rgb(226, 237, 255, 0.75);
     text-align: center;
     padding: 5px;
  }
@@ -49,6 +47,15 @@ body {
  }
  
  li a:hover {
-    background-color: rgb(83, 125, 193);
+    background-color: rgb(121, 149, 194);
     color: black;
+ }
+ div {
+   margin: auto;
+   background-color: rgb(226, 237, 255, 0.75);
+   font-family: verdana;
+   width: 40vw;
+   border-radius: 5px;
+   padding: 10px;
+   margin: auto;
  }

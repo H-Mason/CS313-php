@@ -18,15 +18,15 @@
       </ul>
    </header>
    <hr>
-   Which trip pictures would you like to see?
-   <form action="summerPicsPage.php" onsubmit="return true" id="trip" method="GET">
-      <fieldset id="location">
-         <input type="radio" name="vLoc" id="DC" value="DC">Washington, DC
-         <input type="radio" name="vLoc" id="WI" value="WI">Madison, WI
-         <input type="radio" name="vLoc" id="OR" value="OR">Portland, OR
-      </fieldset>
-      <input type="submit" id="submitButton">
-   </form>
+   <div id="tripForm">
+      <h3>Which trip pictures would you like to see?</h3>
+      <form action="summerPicsPage.php" onsubmit="return true" id="trip" method="GET">
+            <input type="radio" name="vLoc" id="DC" value="DC">Washington, DC
+            <input type="radio" name="vLoc" id="WI" value="WI">Madison, WI
+            <input type="radio" name="vLoc" id="OR" value="OR">Portland, OR<br><br>
+         <input type="submit" id="submitButton">
+      </form>
+   </div>
 </body>
 </html>
 
