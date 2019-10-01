@@ -1,7 +1,6 @@
 <?php
   $majors = array("Computer Science"=>"CS", "Web Design and Development"=>"WD", 
-                  "Computer Information Technology"=>"CIT", "Computer Engineering"=>"CE");
-  
+                  "Computer Information Technology"=>"CIT", "Computer Engineering"=>"CE");  
   ?>
   
 <!DOCTYPE html>
@@ -32,31 +31,34 @@
 			?>
             <!-- Major inputs -->
             
-            </p>
+        </p>
             <br />
 
             <!-- Continents inputs -->
             <p>Select the continents you have visited: <br>
-                <input type="checkbox" name="NA" value="North America" id="NA"><label for="NA">North America</label><br>
+                <input type="checkbox" name="continents[]" value="NA" id="NA"><label for="NA">North America</label><br>
 
-                <input type="checkbox" name="SA" value="South America" id="SA"><label for="SA">South
+                <input type="checkbox" name="continents[]" value="SA" id="SA"><label for="SA">South
                     America</label><br />
 
-                <input type="checkbox" name="EU" value="Europe" id="EU"><label for="EU">Europe</label><br />
+                <input type="checkbox" name="continents[]" value="EU" id="EU"><label for="EU">Europe</label><br />
 
-                <input type="checkbox" name="AS" value="Asia" id="AS"><label for="AS">Asia</label><br />
+                <input type="checkbox" name="continents[]" value="AS" id="AS"><label for="AS">Asia</label><br />
 
-                <input type="checkbox" name="AUS" value="Australia" id="AUS"><label for="AUS">Australia</label><br />
+                <input type="checkbox" name="continents[]" value="AUS" id="AUS"><label for="AUS">Australia</label><br />
 
-                <input type="checkbox" name="AF" value="Africa" id="AF"><label for="AF">Africa</label><br />
+                <input type="checkbox" name="continents[]" value="AF" id="AF"><label for="AF">Africa</label><br />
 
-                <input type="checkbox" name="AN" value="Antarctica" id="AN"><label for="AN">Antarctica</label><br />
-            <p>
+                <input type="checkbox" name="continents[]" value="AN" id="AN"><label for="AN">Antarctica</label><br />
+                <p>
 
-            <br />
-            <input type="textarea" name="comments" value="comments" id="comments"><label for="comments"></label>
-            <br>
-            <input type="submit" id="submitButton">
+                    <br />
+
+
+
+                    <input type="textarea" name="comments" value="comments" id="comments"><label for="comments"></label>
+                    <br>
+                    <input type="submit" id="submitButton">
 
 
     </form>

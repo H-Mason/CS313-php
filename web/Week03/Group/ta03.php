@@ -39,11 +39,6 @@
         	print $EU ."<br>";
     	}
 
-			if (isset($_POST['EU'])) {
-   		 		$AS = $_POST['EU'];
-        	print $AS ."<br>";
-    	}
-
 			if (isset($_POST['AUS'])) {
    		 		$AUS = $_POST['AUS'];
         	print $AUS ."<br>";
