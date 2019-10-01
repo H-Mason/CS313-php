@@ -26,7 +26,7 @@
 
 			foreach ($majors as $key=>$key_value) {
   			print "<input type='radio' name='major' value='$key' id='$key_value'><label
-                for='$key_value'>'$key'</label><br>";
+                for='$key_value'>$key</label><br>";
 			}
 			?>
             <!-- Major inputs -->
