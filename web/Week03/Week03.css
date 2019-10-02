@@ -1,0 +1,54 @@
+body {
+    background-image: url("skittles.jpg");
+    background-size: cover;
+    background-color: rgb(226, 237, 255);
+    background-repeat: no-repeat;
+    font-family: verdana;
+ }
+ h1 {
+    width: 40vw;
+    text-align: center;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(51, 112, 135);
+    color:  rgb(233, 233, 241);
+    text-shadow: 2px 2px #000000;
+ }
+ h2 {
+    width: 30vw;
+    text-align: center;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(51, 112, 135);
+    color:  rgb(233, 233, 241);
+    text-shadow: 2px 2px #181818;
+ }
+ div {
+    width: 45vw;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(217, 217, 255, 0.75);
+ }
+ #viewCart {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+ }
+ #buttonDiv {
+    text-align: center;
+ }
+ .cartButton {
+     float: right;
+ }
+ .quantity {
+    float: right;
+ }
