@@ -29,6 +29,9 @@ body {
     color:  rgb(233, 233, 241);
     text-shadow: 2px 2px #181818;
  }
+ h3 {
+   text-align: center;
+ }
  div {
     width: 45vw;
     border-radius: 5px;
@@ -38,12 +41,12 @@ body {
     margin: auto;
     background-color: rgb(217, 217, 255, 0.75);
  }
- #viewCart {
+ .navButton {
     text-align: center;
     margin: auto;
     padding: 10px;
  }
- #buttonDiv {
+ .buttonDiv {
     text-align: center;
  }
  .cartButton {
@@ -51,4 +54,25 @@ body {
  }
  .quantity {
     float: right;
+ }
+ table {
+   margin: auto;
+ }
+ #addressButton {
+   text-align: center;
+   margin: auto;
+   padding: 10px;
+   border-radius: 5px;
+   border-style: outset;
+   border-width: 2px;
+ }
+ #addressDiv {
+   text-align: center;
+   margin: auto;
+   background-color: rgb(217, 217, 255, 0.05);
+   width: 20vw;
+   background-image: url("skittles.jpg");
+ }
+ .confirmation {
+   text-align: center;
  }

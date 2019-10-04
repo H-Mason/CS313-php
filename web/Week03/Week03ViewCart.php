@@ -55,12 +55,12 @@
             print("</form>");
             $total += $werthersTotal;
          }
-
-         print("Total: $" . $total);
+         $_SESSION['orderTotal'] = $total;
+         print("<p class='total'>Total: $" . $total . "</p>");
       ?>
    </div>
-   <div id="buttonDiv">
-      <button id="browse" onclick="window.location.href='Week03Browse.php'">Continue Browsing</button>
-      <button id="checkout" onclick="window.location.href='Week03Checkout.php'">Checkout</button>
+   <div class="buttonDiv">
+      <button class="navButton" id="browse" onclick="window.location.href='Week03Browse.php'">Continue Browsing</button>
+      <button class="navButton" id="checkout" onclick="window.location.href='Week03Checkout.php'">Checkout</button>
    </div>
 </body>

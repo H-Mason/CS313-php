@@ -83,7 +83,7 @@
          </fieldset>
       </form>
    </div>
-   <div id="buttonDiv">
-      <button id="viewCart" onclick="window.location.href='Week03ViewCart.php'">View Cart</button>
+   <div class="buttonDiv">
+      <button class="navButton" id="viewCart" onclick="window.location.href='Week03ViewCart.php'">View Cart</button>
    </div>
 </body>
