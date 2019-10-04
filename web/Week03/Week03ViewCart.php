@@ -56,7 +56,7 @@
             $total += $werthersTotal;
          }
          $_SESSION['orderTotal'] = $total;
-         print("<p class='total'>Total: $" . $total . "</p>");
+         print("<p class='confirmation'>Total: $" . $total . "</p>");
       ?>
    </div>
    <div class="buttonDiv">
