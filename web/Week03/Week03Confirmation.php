@@ -1,10 +1,20 @@
 <?php
    session_start();
+   $message = " ";
+   $street;
+   $city;
+   $state;
+   $zip;
 
-   $street = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-   $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
-   $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
-   $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
+   if ($_POST['address'] == null || $_POST['city'] == null || $_POST['state'] == null || $_POST['zip'] == null) {
+      $message = "Invalid Address Entered";
+   }
+   else {
+      $street = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+      $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
+      $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
+      $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,8 +60,14 @@
          print("<div>");
          print("<h3>Shipping Address</h3>");
          print("<p class='confirmation'>");
-         print($street . "<br>");
-         print($city . ", " . $state . " " . $zip . "<br>");
+         if ($message != " ") {
+            print($message);
+         }
+         else {
+            
+            print($street . "<br>");
+            print($city . ", " . $state . " " . $zip . "<br>");
+         }
          print("</p>");
          print("</div>");
       }
