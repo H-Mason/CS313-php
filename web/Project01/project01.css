@@ -34,6 +34,7 @@ body {
  }
  div {
     width: 45vw;
+    text-align: center;
     border-radius: 5px;
     border-style: outset;
     border-width: 1px;
