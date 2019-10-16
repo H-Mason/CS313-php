@@ -106,7 +106,9 @@ body {
     color: black;
  }
  img {
-     width: 40vw;
+    width: 40vw;
+    text-align: center;
+    margin: auto;
  }
  .desc {
     width: 40vw;
