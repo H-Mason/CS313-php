@@ -21,7 +21,7 @@
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print 'Animal name: ' . $row['animal_name'] . '<br>';
         print '<img src=\'../project1Data/' . $row['picture'] . '\'<br>';
-        print '<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>';
+        print '<div class=\"desc\">' . fread($desc,filesize($descFile)) . '</div><br>';
         fclose($desc);
       }
     ?>
