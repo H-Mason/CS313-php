@@ -40,6 +40,7 @@ body {
     padding: 10px;
     margin: auto;
     background-color: rgba(24, 100, 55, 0.75);
+    color:  rgb(233, 233, 241);
  }
  .navButton {
     text-align: center;

@@ -14,8 +14,11 @@
   <h1>Learn about Mammals!</h1>
   <div>
     <?php
-      foreach ($db->query("SELECT animal_name FROM animals") as $row) {
+      foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
+      genus_id, family_id, order_id, size_id, size_description, region, diet_id 
+      FROM animals") as $row) {
         print 'Animal name: ' . $row['animal_name'] . '<br>';
+        print '<img ' . $row['picture'] . '<br>';
       }
     ?>
   </div>
