@@ -2,7 +2,7 @@ body {
    background-image: url("berries.jpg");
    background-size: cover;
    background-color: rgb(226, 237, 255);
-   text-align: center
+   text-align: center;
 }
 header {
    background-color: rgb(226, 237, 255, 0.75);
