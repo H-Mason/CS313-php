@@ -18,15 +18,15 @@
       genus_id, family_id, order_id, size_id, size_description, region, diet_id 
       FROM animals") as $row) {
         print('Animal name: ' . $row['animal_name'] . '<br>');
+        print('Species: ' . $row['scientific_name'] . '<br>');
+        // $genus_id = $row['genus_id'];
+        // $genus = ($db->query("SELECT genus FROM genus WHERE genus_id=$genus_id"));
+        // print('Genus: ' . $genus);
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
         fclose($desc);
-        print('Species: ' . $row['scientific_name'] . '<br>');
-        // $genus_id = $row['genus_id'];
-        // $genus = ($db->query("SELECT genus FROM genus WHERE genus_id=$genus_id"));
-        // print('Genus: ' . $genus);
         $descFile = '../project1Data/' . $row['size_description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
