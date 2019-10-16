@@ -1,0 +1,106 @@
+body {
+    background-size: cover;
+    background-color: rgb(108, 247, 161);
+    background-repeat: no-repeat;
+    font-family: verdana;
+ }
+ h1 {
+    width: 40vw;
+    text-align: center;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(34, 128, 70);
+    color:  rgb(233, 233, 241);
+    text-shadow: 2px 2px #000000;
+ }
+ h2 {
+    width: 30vw;
+    text-align: center;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(34, 128, 70);
+    color:  rgb(233, 233, 241);
+    text-shadow: 2px 2px #181818;
+ }
+ h3 {
+   text-align: center;
+ }
+ div {
+    width: 45vw;
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(108, 247, 161, 0.75);
+ }
+ .navButton {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+ }
+ .buttonDiv {
+    text-align: center;
+ }
+ .cartButton {
+     float: right;
+ }
+ .quantity {
+    float: right;
+ }
+ table {
+   margin: auto;
+ }
+ #addressButton {
+   text-align: center;
+   margin: auto;
+   padding: 10px;
+   border-radius: 5px;
+   border-style: outset;
+   border-width: 2px;
+ }
+ #addressDiv {
+   text-align: center;
+   margin: auto;
+   background-color: rgb(108, 247, 161, 0.05);
+   width: 20vw;
+ }
+ .confirmation {
+   text-align: center;
+ }
+ ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(34, 68, 122);
+    width: 50vw;
+    text-align: center;
+    font-family: verdana;
+    font-size: 13pt;
+ }
+ 
+ li {
+    float: left;
+    margin: auto;
+    width: 25vw;
+ }
+ 
+ li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+ }
+ 
+ li a:hover {
+    background-color: rgb(121, 149, 194);
+    color: black;
+ }
