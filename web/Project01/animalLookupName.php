@@ -17,9 +17,11 @@
       foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
       genus_id, family_id, order_id, size_id, size_description, region, diet_id 
       FROM animals") as $row) {
+        $desc = fopen("$row['description']", "r") or die("Unable to open file!");
         print 'Animal name: ' . $row['animal_name'] . '<br>';
         print '<img src=\'../project1Data/' . $row['picture'] . '\'<br>';
-        print '<div class=\'desc\'>' . $row['description'] . '</div><br>';
+        print '<div class=\'desc\'>' . fread($desc,filesize("$row['description']")) . '</div><br>';
+        fclose($desc);
       }
     ?>
   </div>
