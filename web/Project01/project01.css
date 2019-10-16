@@ -1,7 +1,7 @@
 body {
     background-size: cover;
     background-color: rgb(34, 128, 70);
-
+    background-image: "mainBackground.jpg";
     background-repeat: no-repeat;
     font-family: verdana;
  }
@@ -13,7 +13,7 @@ body {
     border-width: 1px;
     padding: 10px;
     margin: auto;
-    background-color: rgb(28, 114, 61);
+    background-color: rgb(17, 88, 45);
     color:  rgb(233, 233, 241);
     text-shadow: 2px 2px #000000;
  }
@@ -80,7 +80,7 @@ body {
     margin: auto;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(34, 68, 122);
+    background-color: rgb(43, 139, 72);
     width: 50vw;
     text-align: center;
     font-family: verdana;
@@ -102,6 +102,6 @@ body {
  }
  
  li a:hover {
-    background-color: rgb(121, 149, 194);
+    background-color: rgb(121, 194, 133);
     color: black;
  }
