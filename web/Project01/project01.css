@@ -25,7 +25,7 @@ body {
     border-width: 1px;
     padding: 10px;
     margin: auto;
-    background-color: rgb(108, 247, 161);
+    background-color: rgb(81, 165, 115);
     color:  rgb(233, 233, 241);
     text-shadow: 2px 2px #181818;
  }
@@ -39,7 +39,7 @@ body {
     border-width: 1px;
     padding: 10px;
     margin: auto;
-    background-color: rgb(108, 247, 161, 0.75);
+    background-color: rgb(81, 165, 115, 0.75);
  }
  .navButton {
     text-align: center;
