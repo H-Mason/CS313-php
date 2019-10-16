@@ -11,4 +11,9 @@
 </head>
 <body>
 Something is here
+<?php
+  foreach ($db->query("SELECT animal_name FROM animals") as $row) {
+    print 'Animal name: ' . $row['animal_name'];
+  }
+?>
 </body>
