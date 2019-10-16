@@ -101,11 +101,13 @@ body {
     padding: 14px 16px;
     text-decoration: none;
  }
- 
  li a:hover {
     background-color: rgb(121, 194, 133);
     color: black;
  }
  img {
      width: 40vw;
+ }
+ .desc {
+    width: 40vw;
  }
