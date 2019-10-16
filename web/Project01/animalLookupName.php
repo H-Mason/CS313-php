@@ -18,7 +18,7 @@
       genus_id, family_id, order_id, size_id, size_description, region, diet_id 
       FROM animals") as $row) {
         print 'Animal name: ' . $row['animal_name'] . '<br>';
-        print '<img ' . $row['picture'] . '<br>';
+        print '<img src=\'../project1Data/' . $row['picture'] . '\'<br>';
       }
     ?>
   </div>
