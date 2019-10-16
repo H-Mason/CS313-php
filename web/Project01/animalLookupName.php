@@ -17,7 +17,7 @@
       foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
       genus_id, family_id, order_id, size_id, size_description, region, diet_id 
       FROM animals") as $row) {
-        $descFile = '../project1Data/' . $row['description']
+        $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print 'Animal name: ' . $row['animal_name'] . '<br>';
         print '<img src=\'../project1Data/' . $row['picture'] . '\'<br>';
