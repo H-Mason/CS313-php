@@ -12,10 +12,11 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
-  
-  <?php
-    foreach ($db->query("SELECT animal_name FROM animals WHERE size_id='3'") as $row) {
-      print 'Animal name: ' . $row['animal_name'];
-    }
-  ?>
+  <div>
+    <?php
+      foreach ($db->query("SELECT animal_name FROM animals") as $row) {
+        print 'Animal name: ' . $row['animal_name'] . '<br>';
+      }
+    ?>
+  </div>
 </body>
