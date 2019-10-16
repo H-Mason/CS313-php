@@ -19,6 +19,7 @@
       FROM animals") as $row) {
         print 'Animal name: ' . $row['animal_name'] . '<br>';
         print '<img src=\'../project1Data/' . $row['picture'] . '\'<br>';
+        print '<div class=\'desc\'>' . $row['description'] . '</div><br>';
       }
     ?>
   </div>

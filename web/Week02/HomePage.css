@@ -9,29 +9,6 @@ body {
     text-align: center;
     padding: 5px;
  }
- .intro {
-    margin: auto;
-    padding: 10px;
-    border-style: outset;
-    background-color: rgb(226, 237, 255, 0.75);
-    border-width: 2px;
-    border-color: rgb(226, 237, 255, 0.75);
-    border-radius: 5px;
-    width: 35vw;
-    height: 200px;
- }
- footer {
-    background-color: rgb(226, 237, 255, 0.75);
-    padding: 5px;
- }
- #footerStuff {
-    text-align: center;
-    font-family: georgia;
-    font-size: 13pt;
- }
- #family {
-    font-family: verdana;
- }
  ul {
     list-style-type: none;
     margin: auto;
@@ -66,31 +43,10 @@ body {
     float: right;
     height: 200px;
  }
- #aboutMe {
-    width: 35vw;
-    margin: auto;
-    border-radius: 5px;
-    padding: 10px;
-    border-style: outset;
-    background-color: rgb(226, 237, 255, 0.75);
-    font-family: verdana;
-    text-align: center;
- }
- #tripForm {
-    margin: auto;
-    background-color: rgb(226, 237, 255, 0.75);
-    font-family: verdana;
-    width: 40vw;
-    border-radius: 5px;
-    padding: 10px;
-    margin: auto;
-  }
-  table {
-    margin: auto;
-    width: 20%;
-    text-align: center;
- }
  img {
     height: 150px;
     padding: 5px;
+ }
+ .desc {
+    width: 30vw;
  }
