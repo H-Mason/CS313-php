@@ -12,7 +12,6 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
-  <h2>Look up animal by name</h2>
   
   <?php
     foreach ($db->query("SELECT animal_name FROM animals") as $row) {
