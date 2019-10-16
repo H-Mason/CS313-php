@@ -12,16 +12,15 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
-  <h2>What would you like to do?</h2>
 
   <ul>
       <li>
          <a href="animalLookupName.php">Find Animal by Name</a>
       </li>
-      <!-- <li>
-         <a>Week 08</a>
-      </li>
       <li>
+         <a href="animalLookupSize.php">Find Animals of Similar Size</a>
+      </li>
+      <!-- <li>
          <a href="https://desolate-earth-41657.herokuapp.com/Week03/Week03Browse.php">Week 03</a>
       </li>
       <li>

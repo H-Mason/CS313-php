@@ -1,30 +1,31 @@
 body {
     background-size: cover;
-    background-color: rgb(108, 247, 161);
+    background-color: rgb(34, 128, 70);
+
     background-repeat: no-repeat;
     font-family: verdana;
  }
  h1 {
-    width: 40vw;
+    width: 95vw;
     text-align: center;
     border-radius: 5px;
     border-style: outset;
     border-width: 1px;
     padding: 10px;
     margin: auto;
-    background-color: rgb(34, 128, 70);
+    background-color: rgb(108, 247, 161);
     color:  rgb(233, 233, 241);
     text-shadow: 2px 2px #000000;
  }
  h2 {
-    width: 30vw;
+    width: 50vw;
     text-align: center;
     border-radius: 5px;
     border-style: outset;
     border-width: 1px;
     padding: 10px;
     margin: auto;
-    background-color: rgb(34, 128, 70);
+    background-color: rgb(108, 247, 161);
     color:  rgb(233, 233, 241);
     text-shadow: 2px 2px #181818;
  }
