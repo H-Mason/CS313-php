@@ -14,7 +14,7 @@
   <h1>Learn about Mammals!</h1>
   
   <?php
-    foreach ($db->query("SELECT animal_name FROM animals") as $row) {
+    foreach ($db->query("SELECT size FROM size") as $row) {
       print 'Animal name: ' . $row['animal_name'];
     }
   ?>

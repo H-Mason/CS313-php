@@ -1,11 +1,6 @@
 <?php
   require '../../db/dbConnect.php';
   $db = get_db();
-  $stmt = $db->prepare("SELECT *
-                        from animals, genus
-                        WHERE genus.genus_id=animals.genus.id;
-                        ");
-  $stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +13,15 @@
 <body>
   <h1>Learn about Mammals!</h1>
   <div>
+    <form>
+      Animal Name:
+    </form> 
     <?php
+      $stmt = $db->prepare("SELECT genus
+      from genus
+      WHERE genus_id = 1");
+      $stmt->execute();
+      echo $stmt;
       //print("genus: " . $stmt.genus);
       // foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
       // genus_id, family_id, order_id, size_id, size_description, region, diet_id 
