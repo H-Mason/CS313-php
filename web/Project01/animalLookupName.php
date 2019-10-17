@@ -37,6 +37,14 @@
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
         fclose($desc);
         print('<img src=\'../project1Data/' . $row['region'] . '\'<br>');
+
+        $stmt = $db->prepare("SELECT *
+        from animals
+        INNER JOIN genus 
+        ON genus.genus=animals.genus_id
+        WHERE genus.genus_id=1");
+        $stmt->execute();
+        echo $stmt.genus_id;
       }
     ?>
   </div>
