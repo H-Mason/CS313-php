@@ -37,21 +37,21 @@ JOIN   diet ON diet.diet_id = animals.diet_id
 where  animals.animal_name = 'Mule Deer'") as $row) {
 
       
-        print('Animal name: ' . $stmt['animal_name'] . '<br>');
-        print('Species: ' . $stmt['scientific_name'] . '<br>');
-        print('Genus: ' . $stmt['genus_id'] . '<br>');
+        print('Animal name: ' . $row['animal_name'] . '<br>');
+        print('Species: ' . $row['scientific_name'] . '<br>');
+        print('Genus: ' . $row['genus_id'] . '<br>');
         // $genus = ($db->query("SELECT genus FROM genus WHERE genus_id=$genus_id"));
         // print('Genus: ' . $genus);
-        print('<img src=\'../project1Data/' . $stmt['picture'] . '\'<br>');
-        $descFile = '../project1Data/' . $stmt['description'];
+        print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
+        $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
         fclose($desc);
-        $descFile = '../project1Data/' . $stmt['size_description'];
+        $descFile = '../project1Data/' . $row['size_description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
         fclose($desc);
-        print('<img src=\'../project1Data/' . $stmt['region'] . '\'<br>'); 
+        print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
       }
       //print("genus: " . $stmt.genus);
       // foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
