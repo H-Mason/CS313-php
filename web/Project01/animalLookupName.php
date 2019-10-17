@@ -44,7 +44,7 @@
         ON genus.genus=animals.genus_id
         WHERE genus.genus_id=1");
         $stmt->execute();
-        print ($stmt.genus_id);
+        print ($stmt.genus);
       }
     ?>
   </div>
