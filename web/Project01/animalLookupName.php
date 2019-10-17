@@ -21,7 +21,7 @@
       //print("genus: " . $stmt.genus);
       foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
       genus_id, family_id, order_id, size_id, size_description, region, diet_id 
-      FROM animals") as $row) {
+      FROM animals WHERE animal_id=1") as $row) {
         print('Animal name: ' . $row['animal_name'] . '<br>');
         print('Species: ' . $row['scientific_name'] . '<br>');
         // $genus_id = $row['genus_id'];
