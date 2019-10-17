@@ -34,14 +34,12 @@ JOIN   family ON family.family_id = animals.family_id
 JOIN   a_order ON a_order.order_id = animals.order_id
 JOIN   size ON size.size_id = animals.size_id
 JOIN   diet ON diet.diet_id = animals.diet_id
-") as $row) {
+WHERE  animals.animal_name = 'Mule Deer';") as $row) {
 
       
         print('Animal name: ' . $row['animal_name'] . '<br>');
         print('Species: ' . $row['scientific_name'] . '<br>');
         print('Genus: ' . $row['genus_id'] . '<br>');
-        // $genus = ($db->query("SELECT genus FROM genus WHERE genus_id=$genus_id"));
-        // print('Genus: ' . $genus);
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
