@@ -34,7 +34,7 @@ JOIN   family ON family.family_id = animals.family_id
 JOIN   a_order ON a_order.order_id = animals.order_id
 JOIN   size ON size.size_id = animals.size_id
 JOIN   diet ON diet.diet_id = animals.diet_id
-where  animals.animal_name = 'Mule Deer'") as $row) {
+") as $row) {
 
       
         print('Animal name: ' . $row['animal_name'] . '<br>');
