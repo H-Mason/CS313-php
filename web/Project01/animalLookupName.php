@@ -33,8 +33,7 @@ JOIN   genus ON genus.genus_id = animals.genus_id
 JOIN   family ON family.family_id = animals.family_id 
 JOIN   a_order ON a_order.order_id = animals.order_id
 JOIN   size ON size.size_id = animals.size_id
-JOIN   diet ON diet.diet_id = animals.diet_id
-where  animals.animal_name = 'Mule Deer'");
+JOIN   diet ON diet.diet_id = animals.diet_id");
       
       print('Animal name: ' . $stmt['animal_name'] . '<br>');
       print('Species: ' . $stmt['scientific_name'] . '<br>');
