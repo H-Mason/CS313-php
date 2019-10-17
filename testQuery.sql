@@ -1,13 +1,13 @@
 SELECT animals.animal_name,
            animals.picture,
            animals.description,
-           genus.genus AS "genus",
-           family.family AS "family",
-           a_order.order_name AS "order",
-           size.size AS "size",
+           genus.genus AS genus,
+           family.family AS family,
+           a_order.order_name AS a_order,
+           size.size AS size,
            animals.size_description,
            animals.region,
-           diet.diet AS "diet"
+           diet.diet AS diet
     FROM   animals
     JOIN   genus ON genus.genus_id = animals.genus_id
     JOIN   family ON family.family_id = animals.family_id 
