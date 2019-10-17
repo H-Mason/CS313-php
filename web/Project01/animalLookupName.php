@@ -18,7 +18,7 @@
     </form> 
     <?php
       
-      $db->query("SELECT animals.animal_name,
+      $stmt = ($db->query("SELECT animals.animal_name,
                   animals.picture,
                   animals.description,
                   genus.genus AS "genus",
@@ -34,22 +34,23 @@
             JOIN   a_order ON a_order.order_id = animals.order_id
             JOIN   size ON size.size_id = animals.size_id
             JOIN   diet ON diet.diet_id = animals.diet_id
-            where  animals.animal_name = 'Mule Deer';") as $row;
-      print('Animal name: ' . $row['animal_name'] . '<br>');
-      print('Species: ' . $row['scientific_name'] . '<br>');
-      print('Genus: ' . $row['genus_id'] . '<br>');
+            where  animals.animal_name = 'Mule Deer';");
+      
+      print('Animal name: ' . $stmt['animal_name'] . '<br>');
+      print('Species: ' . $stmt['scientific_name'] . '<br>');
+      print('Genus: ' . $stmt['genus_id'] . '<br>');
       // $genus = ($db->query("SELECT genus FROM genus WHERE genus_id=$genus_id"));
       // print('Genus: ' . $genus);
-      print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
-      $descFile = '../project1Data/' . $row['description'];
+      print('<img src=\'../project1Data/' . $stmt['picture'] . '\'<br>');
+      $descFile = '../project1Data/' . $stmt['description'];
       $desc = fopen($descFile, "r") or die("Unable to open file!");
       print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
       fclose($desc);
-      $descFile = '../project1Data/' . $row['size_description'];
+      $descFile = '../project1Data/' . $stmt['size_description'];
       $desc = fopen($descFile, "r") or die("Unable to open file!");
       print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
       fclose($desc);
-      print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
+      print('<img src=\'../project1Data/' . $stmt['region'] . '\'<br>'); 
       
       //print("genus: " . $stmt.genus);
       // foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
