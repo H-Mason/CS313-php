@@ -2,9 +2,8 @@
   require '../../db/dbConnect.php';
   $db = get_db();
   $stmt = $db->prepare("SELECT *
-                        from animals
-                        INNER JOIN genus 
-                        ON genus.genus_id=animals.genus.id
+                        from animals, genus
+                        WHERE genus.genus_id=animals.genus.id;
                         ");
   $stmt->execute();
 ?>
