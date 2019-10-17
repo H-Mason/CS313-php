@@ -3,7 +3,8 @@
   $db = get_db();
   $stmt = $db->prepare("SELECT *
                         from animals
-                        LEFT JOIN genus ON genus.genus_id=animals.genus.id
+                        INNER JOIN genus 
+                        ON genus.genus_id=animals.genus.id
                         ");
   $stmt->execute();
 ?>
@@ -19,7 +20,7 @@
   <h1>Learn about Mammals!</h1>
   <div>
     <?php
-      print("genus: " . $stmt.genus);
+      //print("genus: " . $stmt.genus);
       // foreach ($db->query("SELECT animal_name, picture, description, scientific_name, 
       // genus_id, family_id, order_id, size_id, size_description, region, diet_id 
       // FROM animals") as $row) {
