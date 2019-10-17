@@ -4,7 +4,7 @@
   $stmt = $db->prepare("SELECT *
                         from animals
                         LEFT JOIN genus ON genus.genus_id=animals.genus.id
-                        ")
+                        ");
   $stmt->execute();
 ?>
 <!DOCTYPE html>
