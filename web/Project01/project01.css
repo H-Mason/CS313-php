@@ -43,40 +43,7 @@ body {
     background-color: rgba(24, 100, 55, 0.75);
     color:  rgb(233, 233, 241);
  }
- .navButton {
-    text-align: center;
-    margin: auto;
-    padding: 10px;
- }
- .buttonDiv {
-    text-align: center;
- }
- .cartButton {
-     float: right;
- }
- .quantity {
-    float: right;
- }
- table {
-   margin: auto;
- }
- #addressButton {
-   text-align: center;
-   margin: auto;
-   padding: 10px;
-   border-radius: 5px;
-   border-style: outset;
-   border-width: 2px;
- }
- #addressDiv {
-   text-align: center;
-   margin: auto;
-   background-color: rgb(108, 247, 161, 0.05);
-   width: 20vw;
- }
- .confirmation {
-   text-align: center;
- }
+
  .directory {
     display: inline-block;
     border: none;
@@ -148,4 +115,7 @@ body {
     background-color: rgb(158, 228, 170);
     font-family: verdana;
     font-size: 11pt;
+ }
+ #directory {
+     width: 10vw;
  }
