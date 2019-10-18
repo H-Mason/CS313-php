@@ -32,7 +32,7 @@ FROM   animals
 JOIN   genus ON genus.genus_id = animals.genus_id
 JOIN   family ON family.family_id = animals.family_id
 JOIN   a_order ON a_order.order_id = animals.order_id
-WHERE  genus.genus = '$input';
+WHERE  genus.genus = 'Odocoileus';
 
 SELECT animals.animal_name,
        animals.description,
@@ -41,11 +41,18 @@ SELECT animals.animal_name,
 FROM   animals
 JOIN   family ON family.family_id = animals.family_id
 JOIN   a_order ON a_order.order_id = animals.order_id
-WHERE  family.family = '$input';
+WHERE  family.family = 'Cervidae';
 
 SELECT animals.animal_name,
        animals.description,
        a_order.order_name AS a_order
 FROM   animals
 JOIN   a_order ON a_order.order_id = animals.order_id
-WHERE  a_order.order_name = '$input';
+WHERE  a_order.order_name = 'Artiodactyla';
+
+SELECT animals.animal_name,
+       animals.description,
+       diet.diet AS diet
+FROM   animals
+JOIN   diet ON diet.diet_id = animals.diet_id
+WHERE  diet.diet = 'Herbivore';

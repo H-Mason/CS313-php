@@ -78,7 +78,7 @@
             print("<h3>" . $input . "</h3>");
             foreach ($db->query("SELECT animals.animal_name,
                                     animals.description,
-                                    genus.genus AS genus
+                                    genus.genus AS genus,
                                     family.family AS family,
                                     a_order.order_name AS a_order
                                 FROM   animals
@@ -134,7 +134,7 @@
                                     animals.description,
                                     diet.diet AS diet
                             FROM   animals
-                            diet ON diet.diet_id = animals.diet_id
+                            JOIN   diet ON diet.diet_id = animals.diet_id
                             WHERE  diet.diet = '$input'") as $row) {
                 print('Animal name: ' . $row['animal_name'] . '<br>');
                 $descFile = '../project1Data/' . $row['description'];
