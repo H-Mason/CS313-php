@@ -1,6 +1,7 @@
 <?php
   require '../../db/dbConnect.php';
   $db = get_db();
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,6 @@
 <body>
   <h1>Learn about Mammals!</h1>
   <div>
-    <form>
-      Animal Name:
-    </form> 
     <?php
       
       foreach ($db->query("SELECT animals.animal_name,
