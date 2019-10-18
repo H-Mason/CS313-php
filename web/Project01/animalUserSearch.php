@@ -59,7 +59,7 @@
             print("</form>");
         }
         print("</div><div>");
-        print("<a href='animalLookupMain.php'><ul><li class='directory'>Return Home</li></ul></a>");
+        print("<a href='animalLookupMain.php' class='directory'>Return Home</a>");
     ?>
   </div>
 </body>
