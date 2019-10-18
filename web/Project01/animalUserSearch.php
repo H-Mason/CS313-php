@@ -16,7 +16,7 @@
     <?php
         if (isset($_POST['byName'])) {
             print("<form action='animallookupName.php' method='post' id='inputForm' name='inputForm'>");
-            print("AnimalName: <input type='text' class='input' name='input'><br>");
+            print("AnimalName: <input type='text' class='input' name='input'><br><br>");
             print("<input type='submit' class='directory' id='submit' value='Search'>");
             print("</form>");
         }
