@@ -35,10 +35,10 @@
                             JOIN   diet ON diet.diet_id = animals.diet_id
                             WHERE  animals.animal_name = $input") as $row) 
             {
-                if (!isset($row)) {
-                    print("No animals found")
-                }
-                else {
+                // if (!isset($row)) {
+                //     print("No animals found")
+                // }
+                // else {
                     print('Animal name: ' . $row['animal_name'] . '<br>');
                     print('Species: ' . $row['scientific_name'] . '<br>');
                     print('Genus: ' . $row['genus'] . '<br>');
@@ -56,7 +56,7 @@
                     print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                     fclose($desc);
                     print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
-                }
+                // }
             }
         }
         if (isset($_POST['bySize'])) {
