@@ -39,7 +39,7 @@
       {
         print('Animal name: ' . $row['animal_name'] . '<br>');
         print('Species: ' . $row['scientific_name'] . '<br>');
-        print('Genus: ' . $row['genus'] . '<br>');
+        //print('Genus: ' . $row['genus'] . '<br>');
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
