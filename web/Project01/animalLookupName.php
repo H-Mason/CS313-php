@@ -44,7 +44,7 @@
         print('Order: ' . $row['a_order'] . '<br>');
         print('Diet: ' . $row['diet'] . '<br>');
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
-        print('Size: ' . $row['size'] . '<br><br>');
+        print('Size: ' . $row['size'] . '<br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
