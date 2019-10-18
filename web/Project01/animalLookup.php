@@ -60,7 +60,20 @@
             }
         }
         if (isset($_POST['bySize'])) {
-            
+            foreach ($db->query("SELECT animals.animal_name,
+                                    animals.size_description,
+                                    size.size AS size
+                            FROM   animals
+                            JOIN   size on size.size_id = animals.size_id
+                            WHERE  size.size = $input") as $row) {
+                print($input . "Animals<br>");
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                $descFile = '../project1Data/' . $row['size_description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+
+            }
         }
         if (isset($_POST['byGenus'])) {
             

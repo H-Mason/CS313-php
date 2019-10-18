@@ -15,3 +15,10 @@ SELECT animals.animal_name,
     JOIN   size ON size.size_id = animals.size_id
     JOIN   diet ON diet.diet_id = animals.diet_id
     where  animals.animal_name = 'Mule Deer';
+
+SELECT animals.animal_name,
+       animals.size_description,
+       size.size AS size
+FROM   animals
+JOIN   size on size.size_id = animals.size_id
+WHERE  size.size = 'Large';
