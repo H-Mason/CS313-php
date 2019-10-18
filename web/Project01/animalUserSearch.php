@@ -58,8 +58,7 @@
             print("<input type='submit' class='directory' id='submit' name='byDiet' value='Search'>");
             print("</form>");
         }
-        //print("</div><div>");
-        print("<a href='animalLookupMain.php' class='directory' id='directory'>Return Home</a>");
+        print("<br><a href='animalLookupMain.php' class='directory' id='directory'>Return Home</a>");
     ?>
   </div>
 </body>
