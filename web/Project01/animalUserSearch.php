@@ -1,12 +1,6 @@
 <?php
   require '../../db/dbConnect.php';
   $db = get_db();
-  $name = $_POST['byName'];
-  $size;
-  $genus;
-  $family;
-  $order;
-  $diet;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,4 +12,28 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
+    <?php
+        if (isset($_POST['byName'])) {
+            print("<form action='animallookupName.php' method='post' id='inputForm' name='inputForm'>");
+            print("AnimalName: <input type='text' class='input' name='input'><br>");
+            print("<input type='submit' class='directory' value='Search'>");
+            print("</form>");
+        }
+        if (isset($_POST['bySize'])) {
+    
+        }
+        if (isset($_POST['byGenus'])) {
+    
+        }
+        if (isset($_POST['byFamily'])) {
+    
+        }
+        if (isset($_POST['byOrder'])) {
+    
+        }
+        if (isset($_POST['byDiet'])) {
+    
+        }
+    ?>
+          <input type="submit" name="byName" class="directory" value="Find Animal by Name">
 </body>
