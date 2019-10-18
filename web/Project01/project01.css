@@ -93,7 +93,6 @@ body {
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
-    /* float: left; */
     margin: auto;
     width: 25vw;
  }
@@ -112,7 +111,6 @@ body {
     text-align: center;
     font-family: verdana;
     font-size: 13pt;
-    
  }
  
  li {
@@ -140,4 +138,9 @@ body {
  }
  .desc {
     width: 40vw;
+ }
+ #submit {
+    width: 15vw;
+    padding: 5px;
+
  }

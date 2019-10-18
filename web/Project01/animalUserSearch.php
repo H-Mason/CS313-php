@@ -12,11 +12,12 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
+  <div>
     <?php
         if (isset($_POST['byName'])) {
             print("<form action='animallookupName.php' method='post' id='inputForm' name='inputForm'>");
             print("AnimalName: <input type='text' class='input' name='input'><br>");
-            print("<input type='submit' class='directory' value='Search'>");
+            print("<input type='submit' class='directory' id='submit' value='Search'>");
             print("</form>");
         }
         if (isset($_POST['bySize'])) {
@@ -35,5 +36,5 @@
     
         }
     ?>
-          <input type="submit" name="byName" class="directory" value="Find Animal by Name">
+  </div>
 </body>
