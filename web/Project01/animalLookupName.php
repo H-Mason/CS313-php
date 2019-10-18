@@ -21,7 +21,7 @@
       foreach ($db->query("SELECT animals.animal_name,
                                   animals.picture,
                                   animals.description,
-                                  animals.scientific_name
+                                  animals.scientific_name,
                                   genus.genus AS genus,
                                   family.family AS family,
                                   a_order.order_name AS a_order,
