@@ -72,20 +72,74 @@
                 $desc = fopen($descFile, "r") or die("Unable to open file!");
                 print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                 fclose($desc);
-
             }
         }
         if (isset($_POST['byGenus'])) {
-            
+            print("<h3>" . $input . "</h3>");
+            foreach ($db->query("SELECT animals.animal_name,
+                                    animals.description,
+                                    genus.genus AS genus
+                                    family.family AS family,
+                                    a_order.order_name AS a_order
+                                FROM   animals
+                                JOIN   genus ON genus.genus_id = animals.genus_id
+                                JOIN   family ON family.family_id = animals.family_id
+                                JOIN   a_order ON a_order. order_id = animals.order_id
+                                WHERE  genus.genus = '$input'") as $row) {
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                print('Family: ' . $row['family'] . '<br>');
+                print('Order: ' . $row['a_order'] . '<br>');
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+            }
         }
         if (isset($_POST['byFamily'])) {
-            
+            print("<h3>" . $input . "</h3>");
+            foreach ($db->query("SELECT animals.animal_name,
+                                    animals.description,
+                                    family.family AS family,
+                                    a_order.order_name AS a_order
+                                FROM   animals
+                                JOIN   family ON family.family_id = animals.family_id
+                                JOIN   a_order ON a_order. order_id = animals.order_id
+                                WHERE  family.family = '$input'") as $row) {
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                print('Order: ' . $row['a_order'] . '<br>');
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
         }
         if (isset($_POST['byOrder'])) {
-            
+            print("<h3>" . $input . "</h3>");
+            foreach ($db->query("SELECT animals.animal_name,
+                                    animals.description,
+                                    a_order.order_name AS a_order
+                                FROM   animals
+                                JOIN   a_order ON a_order. order_id = animals.order_id
+                                WHERE  a_order.order_name = '$input'") as $row) {
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
         }
         if (isset($_POST['byDiet'])) {
-            
+            print("<h3>" . $input . "s</h3>");
+            foreach ($db->query("SELECT animals.animal_name,
+                                    animals.description,
+                                    diet.diet AS diet
+                            FROM   animals
+                            diet ON diet.diet_id = animals.diet_id
+                            WHERE  diet.diet = '$input'") as $row) {
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+            }
         }
     ?>
   </div>

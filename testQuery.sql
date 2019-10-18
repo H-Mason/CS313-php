@@ -22,3 +22,30 @@ SELECT animals.animal_name,
 FROM   animals
 JOIN   size on size.size_id = animals.size_id
 WHERE  size.size = 'Large';
+
+SELECT animals.animal_name,
+       animals.description,
+       genus.genus AS genus,
+       family.family AS family,
+       a_order.order_name AS a_order
+FROM   animals
+JOIN   genus ON genus.genus_id = animals.genus_id
+JOIN   family ON family.family_id = animals.family_id
+JOIN   a_order ON a_order.order_id = animals.order_id
+WHERE  genus.genus = '$input';
+
+SELECT animals.animal_name,
+       animals.description,
+       family.family AS family,
+       a_order.order_name AS a_order
+FROM   animals
+JOIN   family ON family.family_id = animals.family_id
+JOIN   a_order ON a_order.order_id = animals.order_id
+WHERE  family.family = '$input';
+
+SELECT animals.animal_name,
+       animals.description,
+       a_order.order_name AS a_order
+FROM   animals
+JOIN   a_order ON a_order.order_id = animals.order_id
+WHERE  a_order.order_name = '$input';
