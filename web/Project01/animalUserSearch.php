@@ -54,7 +54,7 @@
             print("<option value='Herbivore'>Herbivore</option>");
             print("<option value='Omnivore'>Omnivore</option>");
             print("<option value='Carnivore'>Carnivore</option>");
-            print("<option value='Carnivore'>Insectivore</option>");
+            print("<option value='Insectivore'>Insectivore</option>");
             print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byDiet' value='Search'>");
             print("</form>");
