@@ -40,11 +40,11 @@
         print('Animal name: ' . $row['animal_name'] . '<br>');
         print('Species: ' . $row['scientific_name'] . '<br>');
         print('Genus: ' . $row['genus'] . '<br>');
-        print('Genus: ' . $row['family'] . '<br>');
-        print('Genus: ' . $row['a_order'] . '<br>');
-        print('Genus: ' . $row['diet'] . '<br>');
+        print('Family: ' . $row['family'] . '<br>');
+        print('Order: ' . $row['a_order'] . '<br>');
+        print('Diet: ' . $row['diet'] . '<br>');
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
-        print('Genus: ' . $row['size'] . '<br>');
+        print('Size: ' . $row['size'] . '<br><br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
         print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
