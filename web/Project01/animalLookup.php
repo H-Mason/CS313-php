@@ -144,7 +144,6 @@
             }
         }
         print("<a href='animalLookupMain.php'><ul class='directory'>Return Home</ul></a>");
-        print("<a href='animalUserSearch.php'><ul class='directory'>Search Again</ul></a>");
     ?>
   </div>
 </body>
