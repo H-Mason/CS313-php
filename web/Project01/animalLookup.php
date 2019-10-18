@@ -33,7 +33,7 @@
                             JOIN   a_order ON a_order.order_id = animals.order_id
                             JOIN   size ON size.size_id = animals.size_id
                             JOIN   diet ON diet.diet_id = animals.diet_id
-                            WHERE  animals.animal_name = 'Whitetail Deer'") as $row) 
+                            WHERE  animals.animal_name = 'Mule Deer'") as $row) 
             {
                 // if (!isset($row)) {
                 //     print("No animals found")
