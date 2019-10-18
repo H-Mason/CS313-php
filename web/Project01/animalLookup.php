@@ -35,7 +35,7 @@
                             JOIN   diet ON diet.diet_id = animals.diet_id
                             WHERE  animals.animal_name = '$input'") as $row) 
             {
-                if ($row == NULL) {
+                if (!isset($row)) {
                     print("No animals found")
                 }
                 else {
