@@ -17,41 +17,34 @@
       <li>
         <form action="animalUserSearch.php" method="post">
           <input type="submit" name="byName" class="directory" value="Find Animal by Name">
-         <!-- <a href="animalLookupName.php">Find Animal by Name</a> -->
+        </form>
       </li>
       <li>
-         <a href="animalLookupSize.php">Find Animals of Similar Size</a>
-      </li>
-      <!-- <li>
-         <a href="https://desolate-earth-41657.herokuapp.com/Week03/Week03Browse.php">Week 03</a>
-      </li>
-      <li>
-         <a>Week 09</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="bySize" class="directory" value="Find Animals of Similar Size">
+        </form>
       </li>
       <li>
-         <a>Week 04</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="byGenus" class="directory" value="Find Animals by Genus">
+        </form>
       </li>
       <li>
-         <a>Week 10</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="byFamily" class="directory" value="Find Animals by Family">
+        </form>
       </li>
       <li>
-         <a>Week 05</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="byOrder" class="directory" value="Find Animals by Order">
+        </form>
       </li>
       <li>
-         <a>Week 11</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="byDiet" class="directory" value="Find Animals by Primary Diet">
+        </form>
       </li>
-      <li>
-         <a>Week 06</a>
-      </li>
-      <li>
-         <a>Week 12</a>
-      </li>
-      <li>
-         <a>Week 07</a>
-      </li>
-      <li>
-         <a>Week 13</a>
-      </li> -->
+      
     </ul>
   
 </body>
