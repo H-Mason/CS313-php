@@ -60,7 +60,7 @@
             }
         }
         if (isset($_POST['bySize'])) {
-            print($input . " Animals<br>");
+            print("<h3>" . $input . " Animals</h3><br><br>");
             foreach ($db->query("SELECT animals.animal_name,
                                     animals.size_description,
                                     size.size AS size
