@@ -1,6 +1,7 @@
 <?php
   require '../../db/dbConnect.php';
   $db = get_db();
+  $input = $_POST['input'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +33,12 @@
                             JOIN   a_order ON a_order.order_id = animals.order_id
                             JOIN   size ON size.size_id = animals.size_id
                             JOIN   diet ON diet.diet_id = animals.diet_id
-                            WHERE  animals.animal_name = 'Mule Deer'") as $row) 
+                            WHERE  animals.animal_name = '$input'") as $row) 
             {
-                if ($row != NULL) {
+                if ($row == NULL) {
+                    print("No animals found")
+                }
+                else {
                     print('Animal name: ' . $row['animal_name'] . '<br>');
                     print('Species: ' . $row['scientific_name'] . '<br>');
                     print('Genus: ' . $row['genus'] . '<br>');
@@ -52,9 +56,6 @@
                     print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                     fclose($desc);
                     print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
-                }
-                else {
-                    print("No animals found")
                 }
             }
         }
