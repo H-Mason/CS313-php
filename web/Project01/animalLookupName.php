@@ -21,6 +21,7 @@
       foreach ($db->query("SELECT animals.animal_name,
                                   animals.picture,
                                   animals.description,
+                                  animals.scientific_name
                                   genus.genus AS genus,
                                   family.family AS family,
                                   a_order.order_name AS a_order,
@@ -38,7 +39,7 @@
       {
         print('Animal name: ' . $row['animal_name'] . '<br>');
         print('Species: ' . $row['scientific_name'] . '<br>');
-        //print('Genus: ' . $row['genus'] . '<br>');
+        print('Genus: ' . $row['genus'] . '<br>');
         print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
         $descFile = '../project1Data/' . $row['description'];
         $desc = fopen($descFile, "r") or die("Unable to open file!");
