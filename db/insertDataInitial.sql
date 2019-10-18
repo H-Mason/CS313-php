@@ -6,13 +6,23 @@ INSERT INTO genus
 VALUES
 ( -- first row: values for the columns in the list above
  'Odocoileus'
+),
+(
+ 'Sciurus'
+),
+(
+ 'Canis'
+),
+(
+ 'Vulpes'
+),
+(
+ 'Mephitis'
+),
+(
+ 'Ursus'
 );
-
--- ( -- second row: values for the columns in the list above
---  Column1_Value, Column2_Value, Column3_Value
--- )
--- add more rows here
--- Insert rows into table 'Genus'
+-- Insert rows into table 'family'
 INSERT INTO family
 ( -- columns to insert data into
  family
@@ -20,12 +30,20 @@ INSERT INTO family
 VALUES
 ( -- first row: values for the columns in the list above
  'Cervidae'
+),
+(
+ 'Sciuridae'
+),
+(
+ 'Canidae'
+),
+(
+ 'Mephitidae'
+),
+(
+ 'Ursidae'
 );
--- ( -- second row: values for the columns in the list above
---  Column1_Value, Column2_Value, Column3_Value
--- )
--- add more rows here
--- Insert rows into table 'Genus'
+-- Insert rows into table 'a_order'
 INSERT INTO a_order
 ( -- columns to insert data into
  order_name
@@ -33,11 +51,14 @@ INSERT INTO a_order
 VALUES
 ( -- first row: values for the columns in the list above
  'Artiodactyla'
+),
+(
+ 'Rodentia'
+),
+(
+ 'Carnivora'
 );
--- ( -- second row: values for the columns in the list above
---  Column1_Value, Column2_Value, Column3_Value
--- )
--- add more rows here
+
 INSERT INTO size
 ( -- columns to insert data into
  size
@@ -66,6 +87,9 @@ VALUES
 ),
 (
  'Carnivore'
+),
+(
+ 'Insectivore'
 );
 
 INSERT INTO animals
@@ -81,11 +105,28 @@ VALUES
 (
  'Whitetail Deer', 'whitetail.jpg', 'whitetailDesc.txt', 'Virginianus', 
  1, 1, 1, 1, 3, 'whitetailSizeDesc.txt', 'whitetailRegion.png'
+),
+(
+ 'Fox Squirrel', 'foxSquirrel.jpg', 'foxSquirrelDesc.txt', 'Niger',
+ 2, 2, 2, 2, 1, 'redFoxSizeDesc.txt', 'redFoxRegion.png'
+),
+(
+ 'Wolf', 'wolf.jpg', 'wolfDesc.txt', 'Lupus', 3, 3, 3, 3, 2,
+ 'wolfSizeDesc.txt', 'wolfRegion.png'
+),
+(
+ 'Red Fox', 'redFox.jpg', 'redFoxDesc.txt', 'Vulpes', 
+ 4, 3, 3, 2, 1, 'redFoxSizeDesc.txt', 'redFoxRegion.png'
+),
+(
+ 'Striped Skunk', 'stripedSkunk.jpg', 'stripedSkunkDesc.txt', 'Mephitis',
+ 5, 4, 3, 4, 1, 'stripedSkunkSizeDesc.txt', 'stripedSkunkRegion.jpg'
+),
+(
+ 'Black Bear', 'blackBear.jpg', 'blackBearDesc.txt', 'Americanus',
+ 6, 5, 3, 2, 3, 'blackBearSizeDesc.txt', 'blackBearRegion.png'
 );
--- ( -- second row: values for the columns in the list above
---  Column1_Value, Column2_Value, Column3_Value
--- )
--- add more rows here
+
 
 
 
