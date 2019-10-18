@@ -1,23 +1,5 @@
 <?php
    session_start();
-   // $iceCreamQuantity = 0;
-   // $skittlesQuantity = 0;
-   // $taffyQuantity = 0;
-   // $werthersQuantity = 0;
-   // $cartTotal = 0;
-
-   //  if (isset($_POST['iceCreamCart'])) {
-   //      $iceCreamQuantity = $_POST['iceCream'];
-   //  }
-   //  if (isset($_POST['skittlesCart'])) {
-   //      $skittlesQuantity = $_POST['skittles'];
-   //  }
-   //  if (isset($_POST['taffyCart'])) {
-   //      $taffyQuantity = $_POST['taffy'];
-   //  }
-   //  if (isset($_POST['werthersCart'])) {
-   //      $werthersQuantity = $_POST['werthers'];
-   //  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

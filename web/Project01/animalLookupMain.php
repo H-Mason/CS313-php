@@ -15,7 +15,9 @@
 
   <ul>
       <li>
-         <a href="animalLookupName.php">Find Animal by Name</a>
+        <form action="animalUserSearch.php" method="post">
+          <input type="submit" name="byName" value="Find Animal by Name">
+         <!-- <a href="animalLookupName.php">Find Animal by Name</a> -->
       </li>
       <li>
          <a href="animalLookupSize.php">Find Animals of Similar Size</a>
