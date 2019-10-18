@@ -143,6 +143,7 @@
                 fclose($desc);
             }
         }
+        print("<ul><a href='animalLookupMain.php'>Return Home</a></ul>");
     ?>
   </div>
 </body>
