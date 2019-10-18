@@ -111,6 +111,7 @@
                 $desc = fopen($descFile, "r") or die("Unable to open file!");
                 print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                 fclose($desc);
+            }
         }
         if (isset($_POST['byOrder'])) {
             print("<h3>" . $input . "</h3>");
@@ -125,6 +126,7 @@
                 $desc = fopen($descFile, "r") or die("Unable to open file!");
                 print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                 fclose($desc);
+            }
         }
         if (isset($_POST['byDiet'])) {
             print("<h3>" . $input . "s</h3>");
