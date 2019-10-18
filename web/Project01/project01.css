@@ -86,7 +86,6 @@ body {
     background-color: rgb(43, 139, 72);
     color: white;
     cursor: pointer;
-    width: 50vw;
     text-align: center;
     font-family: verdana;
     font-size: 13pt;
@@ -94,6 +93,9 @@ body {
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+    /* float: left; */
+    margin: auto;
+    width: 25vw;
  }
  .directory:hover, 
  .directory:focus {
@@ -110,6 +112,7 @@ body {
     text-align: center;
     font-family: verdana;
     font-size: 13pt;
+    
  }
  
  li {
