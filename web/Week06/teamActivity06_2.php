@@ -15,14 +15,14 @@
   $stmt->bindValue(':content', $content, PDO::PARAM_STR);
   $stmt->execute();
 
-  $newId = $pdo->lastInsertId('scripture_id_seq');
-  $stmt = $db->prepare('INSERT INTO topicReference (scripture_id, topic_id) 
-                        VALUES (:newId, "SELECT topic_id
-                                         FROM   topic
-                                WHERE  topic.topic = :topic")');
-  $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
-  $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
-  $stmt->execute();
+//   $newId = $pdo->lastInsertId('scripture_id_seq');
+//   $stmt = $db->prepare('INSERT INTO topicReference (scripture_id, topic_id) 
+//                         VALUES (:newId, "SELECT topic_id
+//                                          FROM   topic
+//                                 WHERE  topic.topic = :topic")');
+//   $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
+//   $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
+//   $stmt->execute();
   
 
 ?>
@@ -36,22 +36,22 @@
 <body>
     <h1>View Scriptures</h1>
     <?php
-        foreach ($db->query("SELECT scripture.book AS book,
-                                    scripture.chapter AS chapter, 
-                                    scripture.verse AS verse, 
-                                    scripture.content AS content, 
-                                    topic.topic AS topic
-                            FROM    scripture, topic, topicReference
-                            WHERE   scripture.id = topicReference.scripture_id
-                                AND topic.id = topicReference.topic_id
-                                ORDER BY book") as $row)
-        {
-        echo 'book: ' . $row['book'];
-        echo 'chapter: ' . $row['chapter'];
-        echo 'verse: ' . $row['verse'];
-        echo 'content: ' . $row['content'];
-        echo 'topic: ' . $row['topic'];
-        echo '<br/>';
-        }
+        // foreach ($db->query("SELECT scripture.book AS book,
+        //                             scripture.chapter AS chapter, 
+        //                             scripture.verse AS verse, 
+        //                             scripture.content AS content, 
+        //                             topic.topic AS topic
+        //                     FROM    scripture, topic, topicReference
+        //                     WHERE   scripture.id = topicReference.scripture_id
+        //                         AND topic.id = topicReference.topic_id
+        //                         ORDER BY book") as $row)
+        // {
+        // echo 'book: ' . $row['book'];
+        // echo 'chapter: ' . $row['chapter'];
+        // echo 'verse: ' . $row['verse'];
+        // echo 'content: ' . $row['content'];
+        // echo 'topic: ' . $row['topic'];
+        // echo '<br/>';
+        // }
     ?>
 </body>
