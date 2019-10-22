@@ -14,10 +14,11 @@
   $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
   $stmt->bindValue(':content', $content, PDO::PARAM_STR);
   $stmt->execute();
+  echo 'Something happened';
 
 //   $newId = $pdo->lastInsertId('scripture_id_seq');
-//   $stmt = $db->prepare('INSERT INTO topicReference (scripture_id, topic_id) 
-//                         VALUES (:newId, "SELECT topic_id
+//   $stmt = $db->prepare('INSERT INTO topicReferences (scripture_id, topic_id) 
+//                         VALUES (:newId, "SELECT 'id'
 //                                          FROM   topic
 //                                 WHERE  topic.topic = :topic")');
 //   $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
@@ -41,9 +42,9 @@
         //                             scripture.verse AS verse, 
         //                             scripture.content AS content, 
         //                             topic.topic AS topic
-        //                     FROM    scripture, topic, topicReference
-        //                     WHERE   scripture.id = topicReference.scripture_id
-        //                         AND topic.id = topicReference.topic_id
+        //                     FROM    scripture, topic, topicReferences
+        //                     WHERE   scripture.id = topicReferences.scripture_id
+        //                         AND topic.id = topicReferences.topic_id
         //                         ORDER BY book") as $row)
         // {
         // echo 'book: ' . $row['book'];
