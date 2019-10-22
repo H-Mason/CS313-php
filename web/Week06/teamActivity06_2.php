@@ -16,14 +16,13 @@
   $stmt->execute();
 
   $newId = $db->lastInsertId('scripture_id_seq');
-  echo $newId;
-//   $stmt = $db->prepare('INSERT INTO topic_references (scripture_id, topic_id) 
-//                         VALUES (:newId, "SELECT \'id\'
-//                                          FROM   topic
-//                                 WHERE  topic.topic = :topic")');
-//   $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
-//   $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
-//   $stmt->execute();
+  $stmt = $db->prepare('INSERT INTO topic_references (scripture_id, topic_id) 
+                        VALUES (:newId, "SELECT \'id\'
+                                         FROM   topic
+                                WHERE  topic.topic = :topic")');
+  $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
+  $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
+  $stmt->execute();
   
 
 ?>
