@@ -14,10 +14,9 @@
   $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
   $stmt->bindValue(':content', $content, PDO::PARAM_STR);
   $stmt->execute();
-  echo 'Something happened';
 
 //   $newId = $pdo->lastInsertId('scripture_id_seq');
-//   $stmt = $db->prepare('INSERT INTO topicReferences (scripture_id, topic_id) 
+//   $stmt = $db->prepare('INSERT INTO topic_references (scripture_id, topic_id) 
 //                         VALUES (:newId, "SELECT 'id'
 //                                          FROM   topic
 //                                 WHERE  topic.topic = :topic")');

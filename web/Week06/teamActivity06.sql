@@ -1,7 +1,7 @@
 
 DROP TABLE if EXISTS "scripture" CASCADE;
 DROP TABLE if EXISTS "topic" CASCADE;
-DROP TABLE if EXISTS "topicReferences" CASCADE;
+DROP TABLE if EXISTS "topic_references" CASCADE;
 
 CREATE TABLE "scripture" (
   "id" SERIAL PRIMARY KEY,
@@ -16,13 +16,13 @@ CREATE TABLE "topic" (
     "topic" varchar(30)
 );
 
-CREATE TABLE "topicReferences" (
+CREATE TABLE "topic_references" (
     "id" serial PRIMARY KEY,
     "scripture_id" int,
     "topic_id" int
 );
 
-ALTER TABLE "topicReferences" ADD FOREIGN KEY ("scripture_id") REFERENCES "scripture" ("id");
-ALTER TABLE "topicReferences" ADD FOREIGN KEY ("topic_id") REFERENCES "topic" ("id");
+ALTER TABLE "topic_references" ADD FOREIGN KEY ("scripture_id") REFERENCES "scripture" ("id");
+ALTER TABLE "topic_references" ADD FOREIGN KEY ("topic_id") REFERENCES "topic" ("id");
 
 INSERT INTO topic (topic) VALUES ('Faith'), ('Sacrifice'), ('Charity');
