@@ -15,7 +15,7 @@
   $stmt->bindValue(':content', $content, PDO::PARAM_STR);
   $stmt->execute();
 
-  $newId = $pdo->lastInsertId('scripture_id_seq');
+  $newId = $db->lastInsertId('scripture_id_seq');
   echo $newId;
 //   $stmt = $db->prepare('INSERT INTO topic_references (scripture_id, topic_id) 
 //                         VALUES (:newId, "SELECT \'id\'
