@@ -97,8 +97,8 @@
         echo 'Topics: '; //. $row['topic'] . '<br>';
 
         $stmtTopics = $db->prepare('SELECT topic FROM topic t'
-			. ' INNER JOIN scripture_topic st ON st.topicId = t.id'
-			. ' WHERE st.scriptureId = :scriptureId');
+			. ' INNER JOIN topic_references st ON st.topic_id = t.id'
+			. ' WHERE st.scripture_id = :scriptureId');
 		$stmtTopics->bindValue(':scriptureId', $row['id']);
 		$stmtTopics->execute();
 		// Go through each topic in the result
