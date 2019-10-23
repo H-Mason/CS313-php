@@ -45,8 +45,8 @@
             echo $newTopic;
             $stmt = $db->prepare('INSERT INTO topic (topic) 
                                   VALUES(:topic)');
-            // $stmt->bindValue(:topic, $newTopic);
-            // $stmt->execute();
+            $stmt->bindValue(':topic', $newTopic);
+            $stmt->execute();
             
             // $newTopicId = $db->lastInsertId('topic_id_seq');
             // $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
