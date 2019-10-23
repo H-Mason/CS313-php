@@ -84,7 +84,8 @@
                                         scripture.chapter AS chapter, 
                                         scripture.verse AS verse, 
                                         scripture.content AS content, 
-                                        topic.topic AS topic
+                                        topic.topic AS topic,
+                                        scripture.id AS id
                                 FROM    scripture, topic, topic_references
                                 WHERE   scripture.id = topic_references.scripture_id
                                     AND topic.id = topic_references.topic_id
