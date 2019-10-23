@@ -21,10 +21,8 @@
     
     foreach ($topicsId as $topicId)
     {
-        // Again, first prepare the statement
         $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
                                     VALUES(:scriptureId, :topicId)');
-        // Then, bind the values
         $statement->bindValue(':scriptureId', $newId);
         $statement->bindValue(':topicId', $topicId);
         $statement->execute();
@@ -32,8 +30,6 @@
   }
   catch (PDOException $ex)
     {
-        // Please be aware that you don't want to output the Exception message in
-        // a production environment
         echo "Error connecting to DB. Details: $ex";
         die();
     }
@@ -57,17 +53,10 @@
         }
         catch (PDOException $ex)
         {
-            // Please be aware that you don't want to output the Exception message in
-            // a production environment
             echo "Error connecting to DB. Details: $ex";
             die();
-        }
-        
+        }   
     }
-
-
-  
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,23 +80,23 @@
                                     AND topic.id = topic_references.topic_id
                                     ORDER BY book") as $row)
         {
-        echo 'Book: ' . $row['book'] . '<br>';
-        echo 'Chapter: ' . $row['chapter'] . '<br>';
-        echo 'Verse: ' . $row['verse'] . '<br>';
-        echo 'Content: ' . $row['content'] . '<br>';
-        echo 'Topics: '; //. $row['topic'] . '<br>';
+            echo 'Book: ' . $row['book'] . '<br>';
+            echo 'Chapter: ' . $row['chapter'] . '<br>';
+            echo 'Verse: ' . $row['verse'] . '<br>';
+            echo 'Content: ' . $row['content'] . '<br>';
+            echo 'Topics: '; 
 
-        $stmtTopics = $db->prepare('SELECT topic FROM topic t'
-			. ' INNER JOIN topic_references st ON st.topic_id = t.id'
-			. ' WHERE st.scripture_id = :scriptureId');
-		$stmtTopics->bindValue(':scriptureId', $row['id']);
-		$stmtTopics->execute();
-		// Go through each topic in the result
-		while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
-		{
-			echo $topicRow['topic'] . ' ';
-		}
-        echo '<br/>';
+            $stmtTopics = $db->prepare('SELECT topic FROM topic t'
+                . ' INNER JOIN topic_references st ON st.topic_id = t.id'
+                . ' WHERE st.scripture_id = :scriptureId');
+            $stmtTopics->bindValue(':scriptureId', $row['id']);
+            $stmtTopics->execute();
+            // Go through each topic in the result
+            while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+            {
+                echo $topicRow['topic'] . ' ';
+            }
+        echo '<br><br>';
         }
           }
           catch (PDOException $ex)
@@ -117,6 +106,5 @@
             echo "Error connecting to DB. Details: $ex";
             die();
         }
-
     ?>
 </body>
