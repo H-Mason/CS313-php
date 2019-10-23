@@ -18,22 +18,7 @@
 
   $newId = $db->lastInsertId('scripture_id_seq');
   try {
-    if (isset($newTopicCh))
-    {
-        $newTopic = $_POST['newTopic'];
-        echo $newTopic;
-        // $stmt = $db->prepare('INSERT INTO topic (topic) VALUES(:topic)');
-        // $stmt->bindValue(:topic, $newTopic);
-        // $stmt->execute();
-        
-        // $newTopicId = $db->lastInsertId('topic_id_seq');
-        // $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
-        //                                VALUES(:scriptureId, :topicId)');
-        //     // Then, bind the values
-        //     $statement->bindValue(':scriptureId', $newId);
-        //     $statement->bindValue(':topicId', $newTopicId);
-        //     $statement->execute();
-    }
+    
     foreach ($topicsId as $topicId)
     {
         // Again, first prepare the statement
@@ -51,6 +36,33 @@
         // a production environment
         echo "Error connecting to DB. Details: $ex";
         die();
+    }
+    if (isset($newTopicCh))
+    {
+        try
+        {
+            $newTopic = $_POST['newTopic'];
+            echo $newTopic;
+            $stmt = $db->prepare('INSERT INTO topic (topic) VALUES(:topic)');
+            $stmt->bindValue(:topic, $newTopic);
+            $stmt->execute();
+            
+            // $newTopicId = $db->lastInsertId('topic_id_seq');
+            // $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
+            //                                VALUES(:scriptureId, :topicId)');
+            //     // Then, bind the values
+            //     $statement->bindValue(':scriptureId', $newId);
+            //     $statement->bindValue(':topicId', $newTopicId);
+            //     $statement->execute();
+        }
+        catch (PDOException $ex)
+        {
+            // Please be aware that you don't want to output the Exception message in
+            // a production environment
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+        
     }
 
 
