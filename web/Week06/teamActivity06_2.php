@@ -42,19 +42,18 @@
         try
         {
             $newTopic = $_POST['newTopic'];
-            echo $newTopic;
             $stmt = $db->prepare('INSERT INTO topic (topic) 
                                   VALUES(:topic)');
             $stmt->bindValue(':topic', $newTopic);
             $stmt->execute();
             
-            // $newTopicId = $db->lastInsertId('topic_id_seq');
-            // $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
-            //                                VALUES(:scriptureId, :topicId)');
-            //     // Then, bind the values
-            //     $statement->bindValue(':scriptureId', $newId);
-            //     $statement->bindValue(':topicId', $newTopicId);
-            //     $statement->execute();
+            $newTopicId = $db->lastInsertId('topic_id_seq');
+            $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
+                                           VALUES(:scriptureId, :topicId)');
+                // Then, bind the values
+                $statement->bindValue(':scriptureId', $newId);
+                $statement->bindValue(':topicId', $newTopicId);
+                $statement->execute();
         }
         catch (PDOException $ex)
         {
