@@ -17,7 +17,8 @@
 
   $newId = $db->lastInsertId('scripture_id_seq');
   echo $newId;
-  foreach ($topicsId as $topicId)
+  try {
+    foreach ($topicsId as $topicId)
 	{
 		echo "ScriptureId: $scriptureId, topicId: $topicId";
 		// Again, first prepare the statement
@@ -27,6 +28,15 @@
 		$statement->bindValue(':topicId', $topicId);
 		$statement->execute();
 	}
+  }
+  catch (PDOException $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error connecting to DB. Details: $ex";
+	die();
+}
+  
   
 
 ?>
