@@ -25,6 +25,7 @@
                 id='topics" . $row['id'] . "' value ='" . $row['id'] . "'>" . $row['topic']);
             }
         ?>
+        <input type='checkbox' name='newTopicCh'><input type="textarea" name="newTopic"><br>
         <input type="submit" value="Add to Database">
     </form>
 

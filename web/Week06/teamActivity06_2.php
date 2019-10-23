@@ -6,6 +6,7 @@
   $verse = $_POST['verse'];
   $content = $_POST['content'];
   $topicsId = $_POST['topics'];
+  $newTopicCh = $_POST['newTopicCh'];
 
   $stmt = $db->prepare('INSERT INTO scripture (book, chapter, verse, content) 
                         VALUES (:book, :chapter, :verse, :content)');
@@ -17,25 +18,41 @@
 
   $newId = $db->lastInsertId('scripture_id_seq');
   try {
+    if (isset($newTopicCh))
+    {
+        $newTopic = $_POST['newTopic'];
+        $stmt = $db->prepare('INSERT INTO topic(topic) VALUES(:topic)');
+        $stmt->bindValue(:topic, $newTopic);
+        $stmt->execute();
+        
+        $newTopicId = $db->lastInsertId('topic_id_seq');
+        $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
+                                       VALUES(:scriptureId, :topicId)');
+            // Then, bind the values
+            $statement->bindValue(':scriptureId', $newId);
+            $statement->bindValue(':topicId', $newTopicId);
+            $statement->execute();
+    }
     foreach ($topicsId as $topicId)
-	{
-		echo "ScriptureId: $newId, topicId: $topicId";
-		// Again, first prepare the statement
-		$statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) VALUES(:scriptureId, :topicId)');
-		// Then, bind the values
-		$statement->bindValue(':scriptureId', $newId);
-		$statement->bindValue(':topicId', $topicId);
-		$statement->execute();
-	}
+    {
+        // Again, first prepare the statement
+        $statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) 
+                                    VALUES(:scriptureId, :topicId)');
+        // Then, bind the values
+        $statement->bindValue(':scriptureId', $newId);
+        $statement->bindValue(':topicId', $topicId);
+        $statement->execute();
+    }   
   }
   catch (PDOException $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error connecting to DB. Details: $ex";
-	die();
-}
-  
+    {
+        // Please be aware that you don't want to output the Exception message in
+        // a production environment
+        echo "Error connecting to DB. Details: $ex";
+        die();
+    }
+
+
   
 
 ?>
