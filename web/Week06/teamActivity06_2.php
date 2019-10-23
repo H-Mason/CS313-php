@@ -60,11 +60,11 @@
                                     AND topic.id = topic_references.topic_id
                                     ORDER BY book") as $row)
         {
-        echo 'book: ' . $row['book'];
-        echo 'chapter: ' . $row['chapter'];
-        echo 'verse: ' . $row['verse'];
-        echo 'content: ' . $row['content'];
-        echo 'topic: ' . $row['topic'];
+        echo 'book: ' . $row['book'] . '<br>';
+        echo 'chapter: ' . $row['chapter'] . '<br>';
+        echo 'verse: ' . $row['verse'] . '<br>';
+        echo 'content: ' . $row['content'] . '<br>';
+        echo 'topic: ' . $row['topic'] . '<br>';
         echo '<br/>';
         }
           }
@@ -75,22 +75,6 @@
             echo "Error connecting to DB. Details: $ex";
             die();
         }
-        // foreach ($db->query("SELECT scripture.book AS book,
-        //                             scripture.chapter AS chapter, 
-        //                             scripture.verse AS verse, 
-        //                             scripture.content AS content, 
-        //                             topic.topic AS topic
-        //                     FROM    scripture, topic, topicReferences
-        //                     WHERE   scripture.id = topicReferences.scripture_id
-        //                         AND topic.id = topicReferences.topic_id
-        //                         ORDER BY book") as $row)
-        // {
-        // echo 'book: ' . $row['book'];
-        // echo 'chapter: ' . $row['chapter'];
-        // echo 'verse: ' . $row['verse'];
-        // echo 'content: ' . $row['content'];
-        // echo 'topic: ' . $row['topic'];
-        // echo '<br/>';
-        // }
+
     ?>
 </body>
