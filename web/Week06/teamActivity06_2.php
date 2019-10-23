@@ -19,7 +19,7 @@
   try {
     foreach ($topicsId as $topicId)
 	{
-		echo "ScriptureId: $scriptureId, topicId: $topicId";
+		echo "ScriptureId: $newId, topicId: $topicId";
 		// Again, first prepare the statement
 		$statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) VALUES(:scriptureId, :topicId)');
 		// Then, bind the values
@@ -49,6 +49,32 @@
 <body>
     <h1>View Scriptures</h1>
     <?php
+        try {
+            foreach ($db->query("SELECT scripture.book AS book,
+                                        scripture.chapter AS chapter, 
+                                        scripture.verse AS verse, 
+                                        scripture.content AS content, 
+                                        topic.topic AS topic
+                                FROM    scripture, topic, topicReferences
+                                WHERE   scripture.id = topicReferences.scripture_id
+                                    AND topic.id = topicReferences.topic_id
+                                    ORDER BY book") as $row)
+        {
+        echo 'book: ' . $row['book'];
+        echo 'chapter: ' . $row['chapter'];
+        echo 'verse: ' . $row['verse'];
+        echo 'content: ' . $row['content'];
+        echo 'topic: ' . $row['topic'];
+        echo '<br/>';
+        }
+          }
+          catch (PDOException $ex)
+        {
+            // Please be aware that you don't want to output the Exception message in
+            // a production environment
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
         // foreach ($db->query("SELECT scripture.book AS book,
         //                             scripture.chapter AS chapter, 
         //                             scripture.verse AS verse, 
