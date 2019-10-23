@@ -16,7 +16,6 @@
   $stmt->execute();
 
   $newId = $db->lastInsertId('scripture_id_seq');
-  echo $newId;
   try {
     foreach ($topicsId as $topicId)
 	{

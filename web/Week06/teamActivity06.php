@@ -21,7 +21,8 @@
         <?php
             foreach ($db->query("SELECT id, topic FROM topic") as $row)
             {
-                print("<input type='checkbox' name='topics[]' value ='" . $row['id'] . "'>" . $row['topic']);
+                print("<input type='checkbox' name='topics[]' 
+                id='topics" . $row['id'] . "' value ='" . $row['id'] . "'>" . $row['topic']);
             }
         ?>
         <input type="submit" value="Add to Database">
