@@ -5,7 +5,7 @@
   $chapter = $_POST['chapter'];
   $verse = $_POST['verse'];
   $content = $_POST['content'];
-  $topic = $_POST['topic'];
+  $topicsId = $_POST['topics'];
 
   $stmt = $db->prepare('INSERT INTO scripture (book, chapter, verse, content) 
                         VALUES (:book, :chapter, :verse, :content)');
@@ -16,13 +16,16 @@
   $stmt->execute();
 
   $newId = $db->lastInsertId('scripture_id_seq');
-  $stmt = $db->prepare('INSERT INTO topic_references (scripture_id, topic_id) 
-                        VALUES (:newId, "SELECT \'id\'
-                                         FROM   topic
-                                WHERE  topic.topic = :topic")');
-  $stmt->bindValue(':newId', $newID, PDO::PARAM_INT);
-  $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
-  $stmt->execute();
+  foreach ($topicsId as $topicId)
+	{
+		echo "ScriptureId: $scriptureId, topicId: $topicId";
+		// Again, first prepare the statement
+		$statement = $db->prepare('INSERT INTO topic_references(scripture_id, topic_id) VALUES(:scriptureId, :topicId)');
+		// Then, bind the values
+		$statement->bindValue(':scriptureId', $newId);
+		$statement->bindValue(':topicId', $topicId);
+		$statement->execute();
+	}
   
 
 ?>

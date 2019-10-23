@@ -19,9 +19,9 @@
         Content: <input type="textarea" name="content"><br>
         Topic: 
         <?php
-            foreach ($db->query("SELECT topic FROM topic") as $row)
+            foreach ($db->query("SELECT id, topic FROM topic") as $row)
             {
-                print("<input type='checkbox' name='" . $row['topic'] . "' value ='" . $row['topic'] . "'>" . $row['topic']);
+                print("<input type='checkbox' name='topics[]' value ='" . $row['id'] . "'>" . $row['topic']);
             }
         ?>
         <input type="submit" value="Add to Database">
