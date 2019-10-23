@@ -55,9 +55,9 @@
                                         scripture.verse AS verse, 
                                         scripture.content AS content, 
                                         topic.topic AS topic
-                                FROM    scripture, topic, topicReferences
-                                WHERE   scripture.id = topicReferences.scripture_id
-                                    AND topic.id = topicReferences.topic_id
+                                FROM    scripture, topic, topic_references
+                                WHERE   scripture.id = topic_references.scripture_id
+                                    AND topic.id = topic_references.topic_id
                                     ORDER BY book") as $row)
         {
         echo 'book: ' . $row['book'];
