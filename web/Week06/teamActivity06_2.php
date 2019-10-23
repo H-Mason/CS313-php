@@ -69,22 +69,31 @@
     <h1>View Scriptures</h1>
     <?php
         try {
-            foreach ($db->query("SELECT scripture.book AS book,
-                                        scripture.chapter AS chapter, 
-                                        scripture.verse AS verse, 
-                                        scripture.content AS content, 
-                                        topic.topic AS topic,
-                                        scripture.id AS id
-                                FROM    scripture, topic, topic_references
-                                WHERE   scripture.id = topic_references.scripture_id
-                                    AND topic.id = topic_references.topic_id
-                                    ORDER BY book") as $row)
-        {
-            echo 'Book: ' . $row['book'] . '<br>';
-            echo 'Chapter: ' . $row['chapter'] . '<br>';
-            echo 'Verse: ' . $row['verse'] . '<br>';
-            echo 'Content: ' . $row['content'] . '<br>';
-            echo 'Topics: '; 
+        //     foreach ($db->query("SELECT scripture.book AS book,
+        //                                 scripture.chapter AS chapter, 
+        //                                 scripture.verse AS verse, 
+        //                                 scripture.content AS content, 
+        //                                 topic.topic AS topic,
+        //                                 scripture.id AS id
+        //                         FROM    scripture, topic, topic_references
+        //                         WHERE   scripture.id = topic_references.scripture_id
+        //                             AND topic.id = topic_references.topic_id
+        //                             ORDER BY book") as $row)
+        // {
+        //     echo 'Book: ' . $row['book'] . '<br>';
+        //     echo 'Chapter: ' . $row['chapter'] . '<br>';
+        //     echo 'Verse: ' . $row['verse'] . '<br>';
+        //     echo 'Content: ' . $row['content'] . '<br>';
+        //     echo 'Topics: '; 
+        $statement = $db->prepare('SELECT id, book, chapter, verse, content FROM scripture');
+        $statement->execute();
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+	    {
+            echo '<p>';
+            echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
+            echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
+            echo '<br />';
+            echo 'Topics: ';
 
             $stmtTopics = $db->prepare('SELECT topic FROM topic t'
                 . ' INNER JOIN topic_references st ON st.topic_id = t.id'
@@ -96,7 +105,7 @@
             {
                 echo $topicRow['topic'] . ' ';
             }
-        echo '<br><br>';
+        echo '</p><br><br>';
         }
           }
           catch (PDOException $ex)
