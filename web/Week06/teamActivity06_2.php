@@ -90,11 +90,22 @@
                                     AND topic.id = topic_references.topic_id
                                     ORDER BY book") as $row)
         {
-        echo 'book: ' . $row['book'] . '<br>';
-        echo 'chapter: ' . $row['chapter'] . '<br>';
-        echo 'verse: ' . $row['verse'] . '<br>';
-        echo 'content: ' . $row['content'] . '<br>';
-        echo 'topic: ' . $row['topic'] . '<br>';
+        echo 'Book: ' . $row['book'] . '<br>';
+        echo 'Chapter: ' . $row['chapter'] . '<br>';
+        echo 'Verse: ' . $row['verse'] . '<br>';
+        echo 'Content: ' . $row['content'] . '<br>';
+        echo 'Topics: '; //. $row['topic'] . '<br>';
+
+        $stmtTopics = $db->prepare('SELECT topic FROM topic t'
+			. ' INNER JOIN scripture_topic st ON st.topicId = t.id'
+			. ' WHERE st.scriptureId = :scriptureId');
+		$stmtTopics->bindValue(':scriptureId', $row['id']);
+		$stmtTopics->execute();
+		// Go through each topic in the result
+		while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+		{
+			echo $topicRow['topic'] . ' ';
+		}
         echo '<br/>';
         }
           }
