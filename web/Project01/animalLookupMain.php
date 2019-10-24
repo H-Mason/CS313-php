@@ -12,7 +12,7 @@
 </head>
 <body>
   <h1>Learn about Mammals!</h1>
-
+  <div>
   <ul>
       <li>
         <form action="animalUserSearch.php" method="post">
@@ -49,4 +49,5 @@
     <?php
       print("<a href='addNewAnimal.php'><ul class='directory'>Add Animal</ul></a>");
     ?>
+    </div>
 </body>
