@@ -46,5 +46,7 @@
       </li>
       
     </ul>
-  
+    <?php
+      print("<a href='addNewAnimal.php'><ul class='directory'>Add Animal</ul></a>");
+    ?>
 </body>
