@@ -47,6 +47,6 @@
       
     </ul>
     <?php
-      print("<div><a href='addNewAnimal.php'><ul class='directory'>Add Animal</ul></a></div>");
+      print("<a href='addNewAnimal.php'><ul>Add Animal</ul></a>");
     ?>
 </body>
