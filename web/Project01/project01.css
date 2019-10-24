@@ -72,9 +72,9 @@ body {
     list-style-type: none;
     margin: auto;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: rgb(43, 139, 72);
-    width: 40vw;
+    width: 50vw;
     text-align: center;
     font-family: verdana;
     font-size: 13pt;
@@ -83,7 +83,7 @@ body {
  li {
     float: left;
     margin: auto;
-    width: 20vw;
+    width: 25vw;
  }
  
  li a {
