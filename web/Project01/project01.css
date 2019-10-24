@@ -74,7 +74,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: rgb(43, 139, 72);
-    width: 50vw;
+    width: 40vw;
     text-align: center;
     font-family: verdana;
     font-size: 13pt;
@@ -83,7 +83,7 @@ body {
  li {
     float: left;
     margin: auto;
-    width: 25vw;
+    width: 20vw;
  }
  
  li a {
