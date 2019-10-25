@@ -90,7 +90,7 @@
     //otherwise get the existing id
     else {
         try {
-            $genusId = $db->query('SELECT order_id FROM a_order WHERE order_name = $order');
+            
         }
         catch (PDOException $ex)
         {
@@ -129,7 +129,7 @@
     //otherwise get the existing id
     else {
         try {
-            $genusId = $db->query('SELECT family FROM family WHERE family = $family');
+            
         }
         catch (PDOException $ex)
         {
