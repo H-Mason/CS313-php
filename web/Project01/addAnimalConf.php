@@ -17,6 +17,8 @@
     $familyId;
     $filepath = "../project1Data/";
 
+    echo $sizeDescText;
+    
     $filename =  $name . "Desc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
