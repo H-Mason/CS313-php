@@ -23,15 +23,14 @@
     fwrite($descFile, $descText);
     fclose($descFile);
     echo $filepath . $filename;
-    $descText = $filepath . $filename;
+    $descText = $filename;
 
     $filename =  $name . "SizeDesc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
     fwrite($descFile, $sizeDescText);
     fclose($descFile);
-    echo $filepath . $filename;
-    $descText = $filepath . $filename;
+    $sizeDescText = $filename;
     //conditionally add to the small tables
     //genus
     //test to see if it's already in there
@@ -244,10 +243,10 @@
                 $desc = fopen($descFile, "r") or die("Unable to open file!");
                 print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
                 fclose($desc);
-                $descFile = '../project1Data/' . $row['size_description'];
-                $desc = fopen($descFile, "r") or die("Unable to open file!");
-                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
-                fclose($desc);
+                // $descFile = '../project1Data/' . $row['size_description'];
+                // $desc = fopen($descFile, "r") or die("Unable to open file!");
+                // print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                // fclose($desc);
                 // print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
             }
         }
