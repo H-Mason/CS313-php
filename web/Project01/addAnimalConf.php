@@ -31,6 +31,7 @@
     }
     $count = $stmt->rowCount();
     //if it isn't, then add it and get the ID
+   
     if ($count == 0) {
         try {
             $stmt = $db->prepare('INSERT INTO genus (genus) VALUES (:genus)');
@@ -45,9 +46,10 @@
         }
     }
     //otherwise get the existing id
+    $genusStatement = 'SELECT genus_id FROM genus WHERE genus = '$genus'';
     else {
         try {
-            $genusId = $db->query('SELECT genus_id FROM genus WHERE genus.genus = ' . '$genus');
+            $genusId = $db->query($conn->query($genusStatement));
         }
         catch (PDOException $ex)
         {
