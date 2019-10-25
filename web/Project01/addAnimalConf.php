@@ -46,7 +46,7 @@
         }
     }
     //otherwise get the existing id
-    $genusStatement = 'SELECT genus_id FROM genus WHERE genus = '$genus'';
+    $genusStatement = 'SELECT genus_id FROM genus WHERE genus = \'$genus\'';
     else {
         try {
             $genusId = $db->query($conn->query($genusStatement));
