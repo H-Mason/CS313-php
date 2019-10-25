@@ -33,7 +33,7 @@
     //if it isn't, then add it and get the ID
     if ($count == 0) {
         try {
-            $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
+            $stmt = $db->prepare('INSERT INTO genus (genus) VALUES (:genus)');
             $stmt->bindValue(':genus', $genus);
             $stmt->execute();
             $genusId = $db->lastInsertId('genus_genus_id_seq');
