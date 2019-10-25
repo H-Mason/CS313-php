@@ -18,7 +18,9 @@
     
     $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
     $stmt->bindValue(':genus', $genus);
-    if ($stmt->execute()) {
+    $stmt->execute()
+    $count = $stmt->rowCount();
+    if ($count == 0) {
         echo "things happened";
     }
     
