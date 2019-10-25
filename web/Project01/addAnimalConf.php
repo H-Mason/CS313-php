@@ -143,7 +143,7 @@
         }
     }
 
-    echo 'family id: ' . $familyId;
+    echo 'family id: ' . $familyId[0];
     echo 'genus id: ' . $genusId;
     echo 'order id: ' . $orderId;
     // try {
