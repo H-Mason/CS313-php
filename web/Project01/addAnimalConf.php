@@ -23,6 +23,15 @@
     fwrite($descFile, $descText);
     fclose($descFile);
     echo $filepath . $filename;
+    $descText = $filepath . $filename;
+
+    $filename =  $name . "SizeDesc.txt";
+    //add the descriptions to files
+    $descFile = fopen(($filepath . $filename), "w");
+    fwrite($descFile, $sizeDescText);
+    fclose($descFile);
+    echo $filepath . $filename;
+    $descText = $filepath . $filename;
     //conditionally add to the small tables
     //genus
     //test to see if it's already in there
