@@ -12,6 +12,7 @@
     $sizeDescText = $_POST['sizeDesc'];
     $region;
     $picture;
+    $a = 1;
 
     //conditionally add to the small tables
     
@@ -22,7 +23,7 @@
     try {
         $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select :a from genus where genus = :genus)');
         $stmt->bindValue(':genus', $genus);
-        $stmt->bindValue(':a', 1);
+        $stmt->bindValue(':a', $a);
         $stmt->execute();
     }
     catch (PDOException $ex)
