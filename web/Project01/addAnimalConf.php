@@ -165,9 +165,9 @@
         $stmt->bindValue(':picture', $picture);
         $stmt->bindValue(':desc', $descText);
         $stmt->bindValue(':species', $species);
-        $stmt->bindValue(':genus', $genusId);
-        $stmt->bindValue(':family', $familyId);
-        $stmt->bindValue(':order', $orderId);
+        $stmt->bindValue(':genus', $genusId[0]);
+        $stmt->bindValue(':family', $familyId[0]);
+        $stmt->bindValue(':order', $orderId[0]);
         $stmt->bindValue(':diet', $diet);
         $stmt->bindValue(':size', $size);
         $stmt->bindValue(':sizeDesc', $sizeDescText);
