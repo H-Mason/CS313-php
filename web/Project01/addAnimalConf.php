@@ -20,8 +20,9 @@
     $stmt->execute();
     
     try {
-        $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select 1 from genus where genus = :genus)');
+        $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select :a from genus where genus = :genus)');
         $stmt->bindValue(':genus', $genus);
+        $stmt->bindValue(':a', 1);
         $stmt->execute();
     }
     catch (PDOException $ex)
