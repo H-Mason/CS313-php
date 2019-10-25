@@ -14,16 +14,21 @@
     $picture;
 
     //conditionally add to the small tables
+    
     $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
     $stmt->bindValue(':genus', $genus);
     $stmt->execute();
-    echo $stmt;
-    if ($stmt = null) {
-        echo 'Not there';
+    
+    try {
+        $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select 1 from genus where genus = :genus)');
+        $stmt->bindValue(':genus', $genus);
+        $stmt->execute();
     }
-    // $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select 1 from genus where genus = :genus)');
-    // $stmt->bindValue(':genus', $genus);
-    // $stmt->execute();
+    catch (PDOException $ex)
+    {
+        echo "Error connecting to DB. Details: $ex";
+        die();
+    }
 
     // INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
     // INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');
