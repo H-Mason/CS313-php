@@ -48,7 +48,10 @@
     //otherwise get the existing id
     else {
         try {
-            $genusId = $db->query("SELECT genus_id FROM genus WHERE genus = \'" . $genus . "\'");
+            $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
+            $stmt->bindValue(':genus', $genus);
+            $stmt->execute();
+            $genusId = $stmt->fetchAll();
         }
         catch (PDOException $ex)
         {
