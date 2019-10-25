@@ -15,6 +15,13 @@
   <h1>Learn about Mammals!</h1>
   <div>
     <?php
+        if (isset($_POST['all'])) {
+            foreach ($db->query("SELECT animal_name,
+                                 FROM   animals") as $row) 
+            {
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+            }
+        }
         if (isset($_POST['byName'])) {
             foreach ($db->query("SELECT animals.animal_name,
                                   animals.picture,

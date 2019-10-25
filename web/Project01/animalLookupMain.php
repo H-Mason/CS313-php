@@ -13,6 +13,11 @@
 <body>
   <h1>Learn about Mammals!</h1>
   <div>
+  <ul class='directory'>
+    <form action="animalLookup.php" method="post">
+      <input type="submit" name="all" value="All Animals By Name">
+    </form>
+  </ul>
   <ul>
       <li>
         <form action="animalUserSearch.php" method="post">
