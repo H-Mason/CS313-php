@@ -46,7 +46,9 @@ body {
 
  .directory {
     display: inline-block;
-    border: none;
+    border-style: outset;
+    border-color: #181818;
+    border-width: 1px;
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
@@ -109,7 +111,6 @@ body {
  #submit {
     width: 15vw;
     padding: 5px;
-
  }
  .input {
     background-color: rgb(158, 228, 170);
