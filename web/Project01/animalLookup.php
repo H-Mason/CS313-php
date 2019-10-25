@@ -16,16 +16,21 @@
   <div>
     <?php
         if (isset($_POST['all'])) {
+            // foreach ($db->query("SELECT animal_name
+            //                      FROM   animals") as $row) 
+            // {
+            //     print("<form action='animalLookup.php' method='post'><p name='input' value='" . $row['animal_name'] . "'>
+            //     <input type='submit' name='byName' class='directory' value='" . $row['animal_name'] . "'></form>");
+            // }
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
-            print("All Animals: <select class='input' name='input'>");
+            print("Animals in Database: <br><select class='input' name='input'>");
             foreach($db->query("SELECT animal_name FROM animals") as $row)
             {
                 print("<option value='" . $row['animal_name'] . "'>" . $row['animal_name'] . "</option>");
             }
             print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byName' value='Search'>");
-            print("</form>");
-
+            print("</form><br>");
         }
         if (isset($_POST['byName'])) {
             foreach ($db->query("SELECT animals.animal_name,
