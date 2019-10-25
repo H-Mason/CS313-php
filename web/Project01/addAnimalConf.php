@@ -12,30 +12,38 @@
     $sizeDescText = $_POST['sizeDesc'];
     $region;
     $picture;
-    $a = 1;
 
     //conditionally add to the small tables
-    
+    try {
     $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
     $stmt->bindValue(':genus', $genus);
     $stmt->execute()
-    $count = $stmt->rowCount();
-    if ($count == 0) {
-        echo "things happened";
+    }
+    catch (PDOException $ex)
+    {
+        echo "Error connecting to DB. Details: $ex";
+        die();
+    }
+    try {
+        $count = $stmt->rowCount();
+        if ($count == 0) {
+            echo "things happened";
+        }
+    
+    }
+    catch (PDOException $ex)
+    {
+        echo "Error connecting to DB. Details: $ex";
+        die();
     }
     
     
-    // try {
+    // 
     //     $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select :a from genus where genus = :genus)');
     //     $stmt->bindValue(':genus', $genus);
     //     $stmt->bindValue(':a', $a);
     //     $stmt->execute();
-    // }
-    // catch (PDOException $ex)
-    // {
-    //     echo "Error connecting to DB. Details: $ex";
-    //     die();
-    // }
+    // 
 
     // INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
     // INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');
