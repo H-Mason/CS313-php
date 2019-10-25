@@ -126,5 +126,10 @@ body {
     background-color: rgb(158, 228, 170);
     font-family: verdana;
     font-size: 11pt;
-
+ }
+ .tLeft {
+    text-align: right;
+ }
+ .tRight {
+    text-align: left;
  }

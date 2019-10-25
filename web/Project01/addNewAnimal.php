@@ -15,8 +15,8 @@
     <div><form action="addAnimalConf.php" method="post"> 
         <table>
         <tr>
-            <td>Animal Name: </td>
-            <td><input type="text" class="input" name="name"></td>
+            <td class="tLeft">Animal Name: </td>
+            <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
             <td>Animal Description: </td>
