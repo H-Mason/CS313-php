@@ -122,3 +122,7 @@ body {
      text-align: center;
      margin: auto;
  }
+ textarea {
+    width: 30vw;
+    height: 20px;
+ }
