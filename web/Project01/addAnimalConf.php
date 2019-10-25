@@ -240,14 +240,14 @@
                 print('Diet: ' . $row['diet'] . '<br>');
                 print('Size: ' . $row['size'] . '<br>');
                 // print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
-                // $descFile = '../project1Data/' . $row['description'];
-                // $desc = fopen($descFile, "r") or die("Unable to open file!");
-                // print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
-                // fclose($desc);
-                // $descFile = '../project1Data/' . $row['size_description'];
-                // $desc = fopen($descFile, "r") or die("Unable to open file!");
-                // print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
-                // fclose($desc);
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+                $descFile = '../project1Data/' . $row['size_description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
                 // print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
             }
         }
