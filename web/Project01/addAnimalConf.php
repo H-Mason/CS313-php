@@ -240,9 +240,10 @@
             }
         }
         else {
-            print("Animal already in Database");
+            print($name . "is already in the database. <br>");
         }
         print("<br><a href='animalLookupMain.php' class='directory' id='directory'>Return Home</a>");
+        print("<a href='addNewAnimal.php'><ul class='directory'>Add New Animal to Database</ul></a>");
     ?>
     </div>
   
