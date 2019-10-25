@@ -17,21 +17,18 @@
     $familyId;
     $filepath = "../project1Data/";
 
-    echo $sizeDescText;
-    
     $filename =  $name . "Desc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
     fwrite($descFile, $descText);
     fclose($descFile);
-    echo $filepath . $filename;
     $descText = $filename;
 
     $filename =  $name . "SizeDesc.txt";
     //add the descriptions to files
     $sizeDescFile = fopen(($filepath . $filename), "w");
-    fwrite($descFile, $sizeDescText);
-    fclose($descFile);
+    fwrite($sizeDescFile, $sizeDescText);
+    fclose($sizeDescFile);
     $sizeDescText = $filename;
     //conditionally add to the small tables
     //genus
