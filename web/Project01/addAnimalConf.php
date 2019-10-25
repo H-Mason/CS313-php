@@ -17,11 +17,15 @@
     $familyId;
     $filepath = "../project1Data/";
 
+    $region = 'default.jpg';
+    $picture = 'default.jpg';
+
     $filename =  $name . "Desc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
     fwrite($descFile, $descText);
     fclose($descFile);
+    echo $filename;
     $descText = $filename;
 
     $sizefilename =  $name . "SizeDesc.txt";
@@ -29,6 +33,7 @@
     $sizeDescFile = fopen(($filepath . $sizefilename), "w");
     fwrite($sizeDescFile, $sizeDescText);
     fclose($sizeDescFile);
+    echo $sizefilename;
     $sizeDescText = $sizefilename;
     //conditionally add to the small tables
     //genus
