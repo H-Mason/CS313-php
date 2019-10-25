@@ -31,7 +31,6 @@
     }
     $count = $stmt->rowCount();
     //if it isn't, then add it and get the ID
-    $genusStatement = 'SELECT genus_id FROM genus WHERE genus = '$genus'';
     if ($count == 0) {
         try {
             $stmt = $db->prepare('INSERT INTO genus (genus) VALUES (:genus)');
