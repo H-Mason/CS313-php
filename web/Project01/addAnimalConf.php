@@ -24,12 +24,12 @@
     fclose($descFile);
     $descText = $filename;
 
-    $filename =  $name . "SizeDesc.txt";
+    $sizefilename =  $name . "SizeDesc.txt";
     //add the descriptions to files
-    $sizeDescFile = fopen(($filepath . $filename), "w");
+    $sizeDescFile = fopen(($filepath . $sizefilename), "w");
     fwrite($sizeDescFile, $sizeDescText);
     fclose($sizeDescFile);
-    $sizeDescText = $filename;
+    $sizeDescText = $sizefilename;
     //conditionally add to the small tables
     //genus
     //test to see if it's already in there
