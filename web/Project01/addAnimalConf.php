@@ -22,6 +22,7 @@
     $descFile = fopen(($filepath . $filename), "w");
     fwrite($descFile, $descText);
     fclose($descFile);
+    echo $filepath . $filename;
     //conditionally add to the small tables
     //genus
     //test to see if it's already in there
