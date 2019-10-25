@@ -89,7 +89,10 @@
     //otherwise get the existing id
     else {
         try {
-            
+            $stmt = $db->prepare('SELECT order_name FROM a_order WHERE order_name = :order');
+            $stmt->bindValue(':order', $order);
+            $stmt->execute();
+            $orderId = $stmt->fetchAll();
         }
         catch (PDOException $ex)
         {
@@ -117,7 +120,7 @@
             $stmt = $db->prepare('INSERT INTO family (family) VALUES (:family)');
             $stmt->bindValue(':family', $family);
             $stmt->execute();
-            $orderId = $db->lastInsertId('family_family_id_seq');
+            $familyId = $db->lastInsertId('family_family_id_seq');
         }
         catch (PDOException $ex)
         {
@@ -128,7 +131,10 @@
     //otherwise get the existing id
     else {
         try {
-            
+            $stmt = $db->prepare('SELECT family FROM family WHERE family = :family');
+            $stmt->bindValue(':family', $family);
+            $stmt->execute();
+            $familyId = $stmt->fetchAll();
         }
         catch (PDOException $ex)
         {
@@ -137,6 +143,9 @@
         }
     }
 
+    echo 'family id: ' . $familyId;
+    echo 'genus id: ' . $genusId;
+    echo 'order id: ' . $orderId;
     // try {
 
     // }
