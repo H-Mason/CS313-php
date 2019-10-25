@@ -54,26 +54,94 @@
             echo "Error connecting to DB. Details: $ex";
             die();
         }
-        
-
     }
-    
-    try {
 
+    //order
+    //test to see if it's already in there
+    try {
+        $stmt = $db->prepare('SELECT order_name FROM a_order WHERE order_name = :order');
+        $stmt->bindValue(':order', $order);
+        $stmt->execute();
     }
     catch (PDOException $ex)
     {
         echo "Error connecting to DB. Details: $ex";
         die();
     }
+    $count = $stmt->rowCount();
+    //if it isn't, then add it and get the ID
+    if ($count == 0) {
+        try {
+            $stmt = $db->prepare('INSERT INTO a_order (order_name) VALUES (:order)');
+            $stmt->bindValue(':order', $order);
+            $stmt->execute();
+            $orderId = $db->lastInsertId('a_order_order_id_seq');
+        }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+    }
+    //otherwise get the existing id
+    else {
+        try {
+            $genusId = $db->query('SELECT order_id FROM a_order WHERE order_name = $order');
+        }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+    }
     
-    
-    // 
-    //     $stmt = $db->prepare('INSERT INTO genus (genus) SELECT :genus from genus WHERE NOT EXISTS (Select :a from genus where genus = :genus)');
-    //     $stmt->bindValue(':genus', $genus);
-    //     $stmt->bindValue(':a', $a);
-    //     $stmt->execute();
-    // 
+    //family
+    //test to see if it's already in there
+    try {
+        $stmt = $db->prepare('SELECT family FROM family WHERE family = :family');
+        $stmt->bindValue(':family', $family);
+        $stmt->execute();
+    }
+    catch (PDOException $ex)
+    {
+        echo "Error connecting to DB. Details: $ex";
+        die();
+    }
+    $count = $stmt->rowCount();
+    //if it isn't, then add it and get the ID
+    if ($count == 0) {
+        try {
+            $stmt = $db->prepare('INSERT INTO family (family) VALUES (:family)');
+            $stmt->bindValue(':family', $family);
+            $stmt->execute();
+            $orderId = $db->lastInsertId('family_family_id_seq');
+        }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+    }
+    //otherwise get the existing id
+    else {
+        try {
+            $genusId = $db->query('SELECT family FROM family WHERE family = $family');
+        }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+    }
+
+    // try {
+
+    // }
+    // catch (PDOException $ex)
+    // {
+    //     echo "Error connecting to DB. Details: $ex";
+    //     die();
+    // }
 
     // INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
     // INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');
