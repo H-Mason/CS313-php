@@ -15,7 +15,13 @@
     $genusId;
     $orderId;
     $familyId;
+    $filepath = "../project1Data/";
 
+    $filename =  $name . "Desc.txt";
+    //add the descriptions to files
+    $descFile = fopen(($filepath . $filename), "w");
+    fwrite($descFile, $descText);
+    fclose($descFile);
     //conditionally add to the small tables
     //genus
     //test to see if it's already in there
@@ -183,10 +189,6 @@
             die();
         }
     }
-    
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
