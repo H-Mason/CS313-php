@@ -15,7 +15,7 @@
   <div>
   <ul class='directory'>
     <form action="animalLookup.php" method="post">
-      <input type="submit" name="all" value="All Animals By Name">
+      <input type="submit" name="all" class="directory" value="All Animals By Name">
     </form>
   </ul>
   <ul>
@@ -51,6 +51,7 @@
       </li>
       
     </ul>
+    <br>
     <?php
       print("<a href='addNewAnimal.php'><ul class='directory'>Add Animal to Database</ul></a>");
     ?>
