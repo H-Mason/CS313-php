@@ -50,7 +50,7 @@
             $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
             $stmt->bindValue(':genus', $genus);
             $stmt->execute();
-            $genusId = $stmt->fetchAll();
+            $genusId = $stmt->fetch();
         }
         catch (PDOException $ex)
         {
@@ -92,7 +92,7 @@
             $stmt = $db->prepare('SELECT order_name FROM a_order WHERE order_name = :order');
             $stmt->bindValue(':order', $order);
             $stmt->execute();
-            $orderId = $stmt->fetchAll();
+            $orderId = $stmt->fetch();
         }
         catch (PDOException $ex)
         {
@@ -145,7 +145,7 @@
 
     echo 'family id: ' . $familyId[0];
     echo 'genus id: ' . $genusId[0];
-    echo 'order id: ' . $orderId;
+    echo 'order id: ' . $orderId[0];
     // try {
 
     // }
