@@ -14,7 +14,7 @@
   <h1>Learn about Mammals!</h1>
   <div>
     <?php
-        
+
         if (isset($_POST['byName'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm' >");
             print("Animal Name: <input type='text' class='input' name='input'><br><br>");
@@ -79,4 +79,4 @@
         print("<br><a href='animalLookupMain.php' class='directory' id='directory'>Return Home</a>");
     ?>
   </div>
-</body>
+      </body>
