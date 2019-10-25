@@ -122,7 +122,12 @@ body {
      text-align: center;
      margin: auto;
  }
- .inputDesc {
+ textarea {
     width: 30vw;
     height: 50px;
+    
+    /* background-color: rgb(158, 228, 170);
+    font-family: verdana;
+    font-size: 11pt; */
+
  }
