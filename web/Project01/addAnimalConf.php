@@ -17,7 +17,7 @@
     try {
     $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
     $stmt->bindValue(':genus', $genus);
-    $stmt->execute()
+    $stmt->execute();
     }
     catch (PDOException $ex)
     {
