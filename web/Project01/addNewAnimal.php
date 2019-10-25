@@ -14,7 +14,7 @@
     <h1>Add New Animal to Database</h1>
     <div><form action="addAnimalConf.php" method="post"> 
         Animal Name: <input type="text" class="input" name="name"><br><br>
-        Animal Description: <input type="textarea" rows="4" class="inputDesc" name="description"><br><br>
+        Animal Description: <input type="textarea" rows="4" cols="50" class="inputDesc" name="description"><br><br>
         Picture:
         Diet: 
         <?php
