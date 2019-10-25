@@ -17,6 +17,7 @@
     $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
     $stmt->bindValue(':genus', $genus);
     $stmt->execute();
+    echo $stmt;
     if ($stmt = null) {
         echo 'Not there';
     }
