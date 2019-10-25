@@ -19,7 +19,7 @@
             foreach ($db->query("SELECT animal_name
                                  FROM   animals") as $row) 
             {
-                print("<form><input type='submit' name='byName' class='directory' value='" . $row['animal_name'] . "'></form>");
+                print("<form><p name='input' value='" . $row['animal_name'] . "'><input type='submit' name='byName' class='directory' value='" . $row['animal_name'] . "'></form>");
             }
         }
         if (isset($_POST['byName'])) {
