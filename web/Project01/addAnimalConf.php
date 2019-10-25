@@ -143,9 +143,6 @@
         }
     }
 
-    echo 'family id: ' . $familyId[0];
-    echo 'genus id: ' . $genusId[0];
-    echo 'order id: ' . $orderId[0];
     // try {
 
     // }
@@ -155,18 +152,36 @@
     //     die();
     // }
 
-    // INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
-    // INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');
-    // $stmt->bindValue(':order', $order);
-    // $stmt->bindValue(':family', $family);
     //add all that data to the animal table
-    // $stmt = $db->prepare(
-    //     "INSERT INTO animals
-    //     (animal_name, picture, description, scientific_name, 
-    //     genus_id, family_id, order_id, diet_id, size_id, 
-    //     size_description, region) 
-    //     VALUES
-    //     ($name, , , $species, , , , $diet, $size, , )");
+    try {
+        $stmt = $db->prepare(
+                "INSERT INTO animals
+                (animal_name, picture, description, scientific_name, 
+                genus_id, family_id, order_id, diet_id, size_id, 
+                size_description, region) 
+                VALUES
+                (:animal_name, :picture, :desc, :species, :genus, :family, :order, :diet, :size, :sizeDesc, :region)");
+        $stmt->bindValue(':animal_name', $name);
+        $stmt->bindValue(':picture', $picture);
+        $stmt->bindValue(':desc', $descText);
+        $stmt->bindValue(':species', $species);
+        $stmt->bindValue(':genus', $genusId);
+        $stmt->bindValue(':family', $familyId);
+        $stmt->bindValue(':order', $orderId);
+        $stmt->bindValue(':diet', $diet);
+        $stmt->bindValue(':size', $size);
+        $stmt->bindValue(':sizeDesc', $sizeDescText);
+        $stmt->bindValue(':region', $region);
+        $stmt->execute();
+
+    }
+    catch (PDOException $ex)
+    {
+        echo "Error connecting to DB. Details: $ex";
+        die();
+    }
+
+    // 
 
 
 
