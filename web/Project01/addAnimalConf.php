@@ -14,8 +14,7 @@
     $picture;
 
     //conditionally add to the small tables
-    $stmt = $db->prepare("INSERT INTO genus(genus) SELECT :genus WHERE NOT EXISTS (Select 1 from genus where genus = :genus);)"
-    );
+    $stmt = $db->prepare('INSERT INTO genus(genus) SELECT :genus WHERE NOT EXISTS (Select 1 from genus where genus = :genus))');
     $stmt->bindValue(':genus', $genus);
     
     $stmt->execute();
