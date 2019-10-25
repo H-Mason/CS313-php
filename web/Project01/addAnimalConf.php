@@ -14,16 +14,16 @@
     $picture;
 
     //conditionally add to the small tables
-    $stmt = $db->prepare("INSERT INTO genus(genus) SELECT ':genus' WHERE NOT EXISTS (Select 1 from genus where genus = ':genus');
-                          INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
-                          INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');)"
+    $stmt = $db->prepare("INSERT INTO genus(genus) SELECT ':genus' WHERE NOT EXISTS (Select 1 from genus where genus = ':genus');)"
     );
     $stmt->bindValue(':genus', $genus);
-    $stmt->bindValue(':order', $order);
-    $stmt->bindValue(':family', $family);
+    
     $stmt->execute();
 
-
+    // INSERT INTO order(order) SELECT ':order' WHERE NOT EXISTS (Select 1 from order where order = ':order');
+    // INSERT INTO family(family) SELECT ':family' WHERE NOT EXISTS (Select 1 from family where family = ':family');
+    // $stmt->bindValue(':order', $order);
+    // $stmt->bindValue(':family', $family);
     //add all that data to the animal table
     // $stmt = $db->prepare(
     //     "INSERT INTO animals
