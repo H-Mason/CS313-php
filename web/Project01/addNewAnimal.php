@@ -23,7 +23,8 @@
             <td class="tRight"><textarea rows="5" cols="50"  name="desc"></textarea></td>
         </tr>
         <tr>
-            <td class="tLeft">Picture:</td> User upload not supported.
+            <td class="tLeft">Picture:</td> 
+            <td class="tRight">User upload not supported.</td>
         </tr>
         <tr>
             <td class="tLeft">Diet:</td>
@@ -68,7 +69,8 @@
             <td class="tRight"><textarea class="inputDesc" rows="5" cols="50" name="sizeDesc"></textarea></td>
         </tr>
         <tr>
-            <td class="tLeft">Region Picture:</td> User upload not supported.
+            <td class="tLeft">Region Picture:</td>
+            <td class="tRight">User upload not supported.</td>
         </tr>
         </table>
         <input type="submit" class="directory" id="directory" value="Add Animal">
