@@ -122,7 +122,7 @@ body {
      text-align: center;
      margin: auto;
  }
- textarea {
+ .inputDesc {
     width: 30vw;
     height: 20px;
  }
