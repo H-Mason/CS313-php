@@ -13,8 +13,8 @@
 <body>
     <h1>Add New Animal to Database</h1>
     <div><form action="addAnimalConf.php" method="post"> 
-        Animal Name: <input type="text" class="input" name="name"><br>
-        Animal Description: <input type="textarea" class="input" name="description"><br>
+        Animal Name: <input type="text" class="input" name="name"><br><br>
+        Animal Description: <input type="textarea" class="input" name="description"><br><br>
         Picture:
         Diet: 
         <?php
@@ -23,12 +23,12 @@
             {
                 print("<option value='" . $row['diet'] . "'>" . $row['diet'] . "</option>");
             }
-            print("</select><br>");
+            print("</select><br><br>");
         ?>
-        Species: <input type="text" class="input" name="name"><br>
-        Genus: <input type="text" class="input" name="name"><br>
-        Order: <input type="text" class="input" name="name"><br>
-        Family: <input type="text" class="input" name="name"><br>
+        Species: <input type="text" class="input" name="name"><br><br>
+        Genus: <input type="text" class="input" name="name"><br><br>
+        Order: <input type="text" class="input" name="name"><br><br>
+        Family: <input type="text" class="input" name="name"><br><br>
         Size: 
         <?php
             print("<select class='input' name='size'>");
@@ -36,10 +36,10 @@
             {
                 print("<option value='" . $row['size'] . "'>" . $row['size'] . "</option>");
             }
-            print("</select><br>");
+            print("</select><br><br>");
         ?>
-        Size Description: <input type="textarea" class="input" name="description"><br>
+        Size Description: <input type="textarea" class="input" name="description"><br><br>
         Region Picture:
-        <input type="submit" class="directory" value="Add Animal">
+        <input type="submit" class="directory" id="directory" value="Add Animal">
     </form></div>
 </body>
