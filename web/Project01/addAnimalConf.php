@@ -144,7 +144,7 @@
     }
     //add all that data to the animal table, only if the animal isn't already in the system
     try {
-        $stmt = $db->prepare('SELECT name FROM animals WHERE name = :name');
+        $stmt = $db->prepare('SELECT animal_name FROM animals WHERE animal_name = :name');
         $stmt->bindValue(':name', $name);
         $stmt->execute();
     }
