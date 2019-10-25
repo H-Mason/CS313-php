@@ -134,7 +134,7 @@
             $stmt = $db->prepare('SELECT family FROM family WHERE family = :family');
             $stmt->bindValue(':family', $family);
             $stmt->execute();
-            $familyId = $stmt->fetchAll();
+            $familyId = $stmt->fetch();
         }
         catch (PDOException $ex)
         {
