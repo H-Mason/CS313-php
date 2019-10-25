@@ -47,7 +47,7 @@
     //otherwise get the existing id
     else {
         try {
-            $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
+            $stmt = $db->prepare('SELECT genus_id FROM genus WHERE genus = :genus');
             $stmt->bindValue(':genus', $genus);
             $stmt->execute();
             $genusId = $stmt->fetch();
@@ -89,7 +89,7 @@
     //otherwise get the existing id
     else {
         try {
-            $stmt = $db->prepare('SELECT order_name FROM a_order WHERE order_name = :order');
+            $stmt = $db->prepare('SELECT order_id FROM a_order WHERE order_name = :order');
             $stmt->bindValue(':order', $order);
             $stmt->execute();
             $orderId = $stmt->fetch();
@@ -131,7 +131,7 @@
     //otherwise get the existing id
     else {
         try {
-            $stmt = $db->prepare('SELECT family FROM family WHERE family = :family');
+            $stmt = $db->prepare('SELECT family_id FROM family WHERE family = :family');
             $stmt->bindValue(':family', $family);
             $stmt->execute();
             $familyId = $stmt->fetch();
