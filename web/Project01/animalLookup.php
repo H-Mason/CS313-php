@@ -16,7 +16,7 @@
   <div>
     <?php
         if (isset($_POST['all'])) {
-            foreach ($db->query("SELECT animal_name,
+            foreach ($db->query("SELECT animal_name
                                  FROM   animals") as $row) 
             {
                 print('Animal name: ' . $row['animal_name'] . '<br>');
