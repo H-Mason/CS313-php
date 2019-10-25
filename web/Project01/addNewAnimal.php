@@ -19,15 +19,15 @@
             <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
-            <td>Animal Description: </td>
-            <td><textarea rows="5" cols="50"  name="description"></textarea></td>
+            <td class="tLeft">Animal Description: </td>
+            <td class="tRight"><textarea rows="5" cols="50"  name="description"></textarea></td>
         </tr>
         <tr>
-            <td>Picture:</td>
+            <td class="tLeft">Picture:</td>
         </tr>
         <tr>
-            <td>Diet:</td>
-            <td><?php
+            <td class="tLeft">Diet:</td>
+            <td class="tRight"><?php
                     print("<select class='input' name='diet'>");
                     foreach($db->query("SELECT diet FROM diet") as $row)
                     {
@@ -37,24 +37,24 @@
                 ?></td>
         </tr>
         <tr>
-            <td>Species: </td>
-            <td><input type="text" class="input" name="name"></td>
+            <td class="tLeft">Species: </td>
+            <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
-            <td>Genus: </td>
-            <td><input type="text" class="input" name="name"></td>
+            <td class="tLeft">Genus: </td>
+            <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
-            <td>Order: </td>
-            <td><input type="text" class="input" name="name"></td>
+            <td class="tLeft">Order: </td>
+            <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
-            <td>Family: </td>
-            <td><input type="text" class="input" name="name"></td>
+            <td class="tLeft">Family: </td>
+            <td class="tRight"><input type="text" class="input" name="name"></td>
         </tr>
         <tr>
-            <td>Size: </td>
-            <td><?php
+            <td class="tLeft">Size: </td>
+            <td class="tRight"><?php
                     print("<select class='input' name='size'>");
                     foreach($db->query("SELECT size FROM size") as $row)
                     {
@@ -64,11 +64,11 @@
                 ?></td>
         </tr>
         <tr>
-            <td>Size Description: </td>
-            <td><textarea class="inputDesc" rows="5" cols="50" name="sizeDescription"></textarea></td>
+            <td class="tLeft">Size Description: </td>
+            <td class="tRight"><textarea class="inputDesc" rows="5" cols="50" name="sizeDescription"></textarea></td>
         </tr>
         <tr>
-            <td>Region Picture:</td>
+            <td class="tLeft">Region Picture:</td>
         </tr>
         </table>
         <input type="submit" class="directory" id="directory" value="Add Animal">
