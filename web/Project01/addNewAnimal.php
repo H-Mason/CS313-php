@@ -29,9 +29,9 @@
             <td class="tLeft">Diet:</td>
             <td class="tRight"><?php
                     print("<select class='input' name='diet'>");
-                    foreach($db->query("SELECT diet, id FROM diet") as $row)
+                    foreach($db->query("SELECT diet, diet_id FROM diet") as $row)
                     {
-                        print("<option value='" . $row['id'] . "'>" . $row['diet'] . "</option>");
+                        print("<option value='" . $row['diet_id'] . "'>" . $row['diet'] . "</option>");
                     }
                     print("</select>");
                 ?></td>
@@ -56,9 +56,9 @@
             <td class="tLeft">Size: </td>
             <td class="tRight"><?php
                     print("<select class='input' name='size'>");
-                    foreach($db->query("SELECT size, id FROM size") as $row)
+                    foreach($db->query("SELECT size, size_id FROM size") as $row)
                     {
-                        print("<option value='" . $row['id'] . "'>" . $row['size'] . "</option>");
+                        print("<option value='" . $row['size_id'] . "'>" . $row['size'] . "</option>");
                     }
                     print("</select>");
                 ?></td>
