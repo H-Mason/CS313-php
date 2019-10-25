@@ -14,7 +14,25 @@
   <h1>Learn about Mammals!</h1>
   <div>
     <?php
+        if (isset($_POST['all'])) {
+          foreach ($db->query("SELECT animal_name
+                               FROM   animals") as $row) 
+          {
+              print("<form action='animalLookup.php' method='post'><span id='Logo' style='display:none'>
+              <input type='radio' checked name='input' value='" . $row['animal_name'] . "'></span>
+              <input type='submit' name='byName' class='directory' value='" . $row['animal_name'] . "'></form>");
+          }
 
+          // print("<form action='animalLookup.php' method='post' id='inputForm'>");
+          // print("Animals in Database: <br><select class='input' name='input'>");
+          // foreach($db->query("SELECT animal_name FROM animals") as $row)
+          // {
+          //     print("<option value='" . $row['animal_name'] . "'>" . $row['animal_name'] . "</option>");
+          // }
+          // print("</select><br><br>");
+          // print("<input type='submit' class='directory' id='submit' name='byName' value='Search'>");
+          // print("</form><br>");
+      }
         if (isset($_POST['byName'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm' >");
             print("Animal Name: <input type='text' class='input' name='input'><br><br>");

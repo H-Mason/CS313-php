@@ -14,8 +14,8 @@
   <h1>Learn about Mammals!</h1>
   <div>
   <!-- <ul class='directory'> -->
-    <form action="animalLookup.php" method="post">
-      <input type="submit" name="all" class="directory" value="All Animals By Name">
+    <form action="animalUserSearch.php" method="post">
+      <input type="submit" name="all" class="directory" value="All Animals in Database">
     </form>
   <!-- </ul> -->
   <ul>
