@@ -54,3 +54,5 @@ ALTER TABLE "animals" ADD FOREIGN KEY ("family_id") REFERENCES "family" ("family
 ALTER TABLE "animals" ADD FOREIGN KEY ("order_id") REFERENCES "a_order" ("order_id");
 
 ALTER TABLE "animals" ADD FOREIGN KEY ("diet_id") REFERENCES "diet" ("diet_id");
+
+

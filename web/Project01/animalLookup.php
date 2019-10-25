@@ -35,28 +35,23 @@
                             JOIN   diet ON diet.diet_id = animals.diet_id
                             WHERE  animals.animal_name = '$input'") as $row) 
             {
-                // if (!isset($row)) {
-                //     print("No animals found")
-                // }
-                // else {
-                    print('Animal name: ' . $row['animal_name'] . '<br>');
-                    print('Species: ' . $row['scientific_name'] . '<br>');
-                    print('Genus: ' . $row['genus'] . '<br>');
-                    print('Family: ' . $row['family'] . '<br>');
-                    print('Order: ' . $row['a_order'] . '<br>');
-                    print('Diet: ' . $row['diet'] . '<br>');
-                    print('Size: ' . $row['size'] . '<br>');
-                    print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
-                    $descFile = '../project1Data/' . $row['description'];
-                    $desc = fopen($descFile, "r") or die("Unable to open file!");
-                    print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
-                    fclose($desc);
-                    $descFile = '../project1Data/' . $row['size_description'];
-                    $desc = fopen($descFile, "r") or die("Unable to open file!");
-                    print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
-                    fclose($desc);
-                    print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
-                // }
+                print('Animal name: ' . $row['animal_name'] . '<br>');
+                print('Species: ' . $row['scientific_name'] . '<br>');
+                print('Genus: ' . $row['genus'] . '<br>');
+                print('Family: ' . $row['family'] . '<br>');
+                print('Order: ' . $row['a_order'] . '<br>');
+                print('Diet: ' . $row['diet'] . '<br>');
+                print('Size: ' . $row['size'] . '<br>');
+                print('<img src=\'../project1Data/' . $row['picture'] . '\'<br>');
+                $descFile = '../project1Data/' . $row['description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+                $descFile = '../project1Data/' . $row['size_description'];
+                $desc = fopen($descFile, "r") or die("Unable to open file!");
+                print('<div class=\'desc\'>' . fread($desc,filesize($descFile)) . '</div><br>');
+                fclose($desc);
+                print('<img src=\'../project1Data/' . $row['region'] . '\'<br>'); 
             }
         }
         if (isset($_POST['bySize'])) {
