@@ -14,7 +14,7 @@
     <h1>Add New Animal to Database</h1>
     <div><form action="addAnimalConf.php" method="post"> 
         Animal Name: <input type="text" class="input" name="name"><br>
-        Animal Description: <input type="text" class="input" name="description"><br>
+        Animal Description: <input type="textarea" class="input" name="description"><br>
         Picture:
         Diet: 
         <?php
@@ -24,15 +24,22 @@
                 print("<option value='" . $row['diet'] . "'>" . $row['diet'] . "</option>");
             }
             print("</select><br>");
-            
         ?>
-        Species:
-        Genus:
-        Order:
-        Family:
-        Size:
-        Size Description:
+        Species: <input type="text" class="input" name="name"><br>
+        Genus: <input type="text" class="input" name="name"><br>
+        Order: <input type="text" class="input" name="name"><br>
+        Family: <input type="text" class="input" name="name"><br>
+        Size: 
+        <?php
+            print("<select class='input' name='size'>");
+            foreach($db->query("SELECT size FROM size") as $row)
+            {
+                print("<option value='" . $row['size'] . "'>" . $row['size'] . "</option>");
+            }
+            print("</select><br>");
+        ?>
+        Size Description: <input type="textarea" class="input" name="description"><br>
         Region Picture:
-        <input type="submit" >
+        <input type="submit" class="directory" value="Add Animal">
     </form></div>
 </body>

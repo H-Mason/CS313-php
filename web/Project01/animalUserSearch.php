@@ -23,38 +23,54 @@
         if (isset($_POST['bySize'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
             print("Size: <select class='input' name='input'>");
-            print("<option value='Small'>Small</option>");
-            print("<option value='Medium'>Medium</option>");
-            print("<option value='Large'>Large</option>");
+            foreach($db->query("SELECT size FROM size") as $row)
+            {
+                print("<option value='" . $row['size'] . "'>" . $row['size'] . "</option>");
+            }
             print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='bySize' value='Search'>");
             print("</form>");
         }
         if (isset($_POST['byGenus'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
-            print("Genus: <input type='text' class='input' name='input'><br><br>");
+            print("Genus: <select class='input' name='input'>");
+            foreach($db->query("SELECT genus FROM genus") as $row)
+            {
+                print("<option value='" . $row['genus'] . "'>" . $row['genus'] . "</option>");
+            }
+            print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byGenus' value='Search'>");
             print("</form>");
         }
         if (isset($_POST['byFamily'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
-            print("Family: <input type='text' class='input' name='input'><br><br>");
+            print("Family: <select class='input' name='input'>");
+            foreach($db->query("SELECT family FROM family") as $row)
+            {
+                print("<option value='" . $row['family'] . "'>" . $row['family'] . "</option>");
+            }
+            print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byFamily' value='Search'>");
             print("</form>");
         }
         if (isset($_POST['byOrder'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
-            print("Order: <input type='text' class='input' name='input'><br><br>");
+            print("Order: <select class='input' name='input'>");
+            foreach($db->query("SELECT order_name FROM order") as $row)
+            {
+                print("<option value='" . $row['order_name'] . "'>" . $row['order_name'] . "</option>");
+            }
+            print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byOrder' value='Search'>");
             print("</form>");
         }
         if (isset($_POST['byDiet'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
             print("Diet: <select class='input' name='input'>");
-            print("<option value='Herbivore'>Herbivore</option>");
-            print("<option value='Omnivore'>Omnivore</option>");
-            print("<option value='Carnivore'>Carnivore</option>");
-            print("<option value='Insectivore'>Insectivore</option>");
+            foreach($db->query("SELECT diet FROM diet") as $row)
+            {
+                print("<option value='" . $row['diet'] . "'>" . $row['diet'] . "</option>");
+            }
             print("</select><br><br>");
             print("<input type='submit' class='directory' id='submit' name='byDiet' value='Search'>");
             print("</form>");
