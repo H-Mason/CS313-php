@@ -13,33 +13,64 @@
 <body>
     <h1>Add New Animal to Database</h1>
     <div><form action="addAnimalConf.php" method="post"> 
-        Animal Name: <input type="text" class="input" name="name"><br><br>
-        Animal Description: <textarea rows="5" cols="50"  name="description"></textarea><br><br>
-        Picture:
-        Diet: 
-        <?php
-            print("<select class='input' name='diet'>");
-            foreach($db->query("SELECT diet FROM diet") as $row)
-            {
-                print("<option value='" . $row['diet'] . "'>" . $row['diet'] . "</option>");
-            }
-            print("</select><br><br>");
-        ?>
-        Species: <input type="text" class="input" name="name"><br><br>
-        Genus: <input type="text" class="input" name="name"><br><br>
-        Order: <input type="text" class="input" name="name"><br><br>
-        Family: <input type="text" class="input" name="name"><br><br>
-        Size: 
-        <?php
-            print("<select class='input' name='size'>");
-            foreach($db->query("SELECT size FROM size") as $row)
-            {
-                print("<option value='" . $row['size'] . "'>" . $row['size'] . "</option>");
-            }
-            print("</select><br><br>");
-        ?>
-        Size Description: <textarea class="inputDesc" rows="5" cols="50" name="sizeDescription"></textarea><br><br>
-        Region Picture:
+        <table>
+        <tr>
+            <td>Animal Name: </td>
+            <td><input type="text" class="input" name="name"></td>
+        </tr>
+        <tr>
+            <td>Animal Description: </td>
+            <td><textarea rows="5" cols="50"  name="description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Picture:</td>
+        </tr>
+        <tr>
+            <td>Diet:</td>
+            <td><?php
+                    print("<select class='input' name='diet'>");
+                    foreach($db->query("SELECT diet FROM diet") as $row)
+                    {
+                        print("<option value='" . $row['diet'] . "'>" . $row['diet'] . "</option>");
+                    }
+                    print("</select>");
+                ?></td>
+        </tr>
+        <tr>
+            <td>Species: </td>
+            <td><input type="text" class="input" name="name"></td>
+        </tr>
+        <tr>
+            <td>Genus: </td>
+            <td><input type="text" class="input" name="name"></td>
+        </tr>
+        <tr>
+            <td>Order: </td>
+            <td><input type="text" class="input" name="name"></td>
+        </tr>
+        <tr>
+            <td>Family: </td>
+            <td><input type="text" class="input" name="name"></td>
+        </tr>
+        <tr>
+            <td>Size: </td>
+            <td><?php
+                    print("<select class='input' name='size'>");
+                    foreach($db->query("SELECT size FROM size") as $row)
+                    {
+                        print("<option value='" . $row['size'] . "'>" . $row['size'] . "</option>");
+                    }
+                    print("</select>");
+                ?></td>
+        </tr>
+        <tr>
+            <td>Size Description: </td>
+            <td><textarea class="inputDesc" rows="5" cols="50" name="sizeDescription"></textarea></td>
+        </tr>
+        <tr>
+            <td>Region Picture:</td>
+        </tr>
+        </table>
         <input type="submit" class="directory" id="directory" value="Add Animal">
     </form></div>
 </body>
