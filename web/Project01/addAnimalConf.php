@@ -144,7 +144,7 @@
     }
 
     echo 'family id: ' . $familyId[0];
-    echo 'genus id: ' . $genusId;
+    echo 'genus id: ' . $genusId[0];
     echo 'order id: ' . $orderId;
     // try {
 
