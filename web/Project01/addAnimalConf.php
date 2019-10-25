@@ -47,7 +47,7 @@
     //otherwise get the existing id
     else {
         try {
-            $genusId = $db->query('SELECT genus_id FROM genus WHERE genus.genus = ' . $genus);
+            $genusId = $db->query('SELECT genus_id FROM genus WHERE genus.genus = ' . '$genus');
         }
         catch (PDOException $ex)
         {
