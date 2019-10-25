@@ -12,24 +12,54 @@
     $sizeDescText = $_POST['sizeDesc'];
     $region;
     $picture;
+    $genusId;
+    $orderId;
+    $familyId;
 
     //conditionally add to the small tables
+    //genus
+    //test to see if it's already in there
     try {
-    $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
-    $stmt->bindValue(':genus', $genus);
-    $stmt->execute();
+        $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
+        $stmt->bindValue(':genus', $genus);
+        $stmt->execute();
     }
     catch (PDOException $ex)
     {
         echo "Error connecting to DB. Details: $ex";
         die();
     }
-    try {
-        $count = $stmt->rowCount();
-        if ($count == 0) {
-            echo "things happened";
+    $count = $stmt->rowCount();
+    //if it isn't, then add it and get the ID
+    if ($count == 0) {
+        try {
+            $stmt = $db->prepare('SELECT genus FROM genus WHERE genus = :genus');
+            $stmt->bindValue(':genus', $genus);
+            $stmt->execute();
+            $genusId = $db->lastInsertId('genus_genus_id_seq');
         }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+    }
+    //otherwise get the existing id
+    else {
+        try {
+            $genusId = $db->query('SELECT genus_id FROM genus WHERE genus = $genus');
+        }
+        catch (PDOException $ex)
+        {
+            echo "Error connecting to DB. Details: $ex";
+            die();
+        }
+        
+
+    }
     
+    try {
+
     }
     catch (PDOException $ex)
     {
