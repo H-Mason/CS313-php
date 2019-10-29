@@ -35,16 +35,16 @@
                 $uploadOk = 0;
             }
         }
-        // Check if file already exists
-        // if (file_exists($target_file)) {
-        //     echo "Sorry, a picture with this name already exists.";
-        //     $uploadOk = 0;
-        // }
-        // // Check file size
-        // if ($_FILES[$picName]["size"] > 500000) {
-        //     echo "Sorry, your file is too large.";
-        //     $uploadOk = 0;
-        // }
+        Check if file already exists
+        if (file_exists($target_file)) {
+            echo "Sorry, a picture with this name already exists.";
+            $uploadOk = 0;
+        }
+        // Check file size
+        if ($_FILES[$picName]["size"] > 5000000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
         // // Allow certain file formats
         // if($imageFileType != "jpg" && $imageFileType != "png" 
         // && $imageFileType != "jpeg") {
