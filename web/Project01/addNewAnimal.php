@@ -73,6 +73,6 @@
             <td class="tRight"><input class="fileInput" type="file" name="region" id="region"></td>
         </tr>
         </table>
-        <input type="submit" class="directory" id="directory" value="Add Animal">
+        <input type="submit" class="directory" id="directory" value="Add Animal" name ="addAnimal">
     </form></div>
 </body>
