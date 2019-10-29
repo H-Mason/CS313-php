@@ -35,7 +35,7 @@
                 $uploadOk = 0;
             }
         }
-        Check if file already exists
+        //Check if file already exists
         if (file_exists($target_file)) {
             echo "Sorry, a picture with this name already exists.";
             $uploadOk = 0;
