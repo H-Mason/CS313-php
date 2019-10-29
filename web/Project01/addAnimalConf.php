@@ -29,7 +29,6 @@
         if(isset($_POST["addAnimal"])) {
             $check = getimagesize($_FILES[$picName]["tmp_name"]);
             if($check !== false) {
-                echo 'false';
                 $uploadOk = 1;
             } else {
                 $uploadOk = 0;
