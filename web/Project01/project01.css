@@ -135,7 +135,17 @@ body {
     text-align: left;
  }
  .fileInput {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+ }
+.fileInput + label {
+   color: black;
    background-color: rgb(158, 228, 170);
    font-family: verdana;
-   color: black;
- }
+   font-size: 11pt;
+   display: inline-block;
+}

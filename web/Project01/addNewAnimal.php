@@ -70,7 +70,8 @@
         </tr>
         <tr>
             <td class="tLeft">Region Picture:</td>
-            <td class="tRight"><input class="fileInput" type="file" name="region" id="region"></td>
+            <td class="tRight"><input class="fileInput" type="file" name="region" id="region">
+            <label for="region">Choose a file</label></td>
         </tr>
         </table>
         <input type="submit" class="directory" id="directory" value="Add Animal">
