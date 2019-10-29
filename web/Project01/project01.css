@@ -152,4 +152,5 @@ body {
    border-style: outset;
    border-color: #464545;
    border-width: 1px;
+   border-radius: 5px;
 }
