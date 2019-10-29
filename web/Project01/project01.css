@@ -142,7 +142,7 @@ body {
 	position: absolute;
 	z-index: -1;
  } */
- form.uploadButton {
+ input[type="file"]  {
    color: black;
    background-color: rgb(158, 228, 170);
    font-family: verdana;
