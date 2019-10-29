@@ -134,15 +134,15 @@ body {
  .tRight {
     text-align: left;
  }
- .fileInput {
-	width: 0.1px;
+ /* .fileInput {
+   width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 	z-index: -1;
- }
-.fileInput + label {
+ } */
+ input[type="file"]  {
    color: black;
    background-color: rgb(158, 228, 170);
    font-family: verdana;
@@ -150,7 +150,7 @@ body {
    display: inline-block;
    padding: 2px;
    border-style: inset;
-   /* border-color: #464545; */
+   border-color: #464545;
    border-width: 1px;
    border-radius: 5px;
-}
+} 
