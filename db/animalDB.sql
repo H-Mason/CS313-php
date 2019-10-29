@@ -8,7 +8,7 @@ DROP TABLE if EXISTS diet CASCADE;
 CREATE TABLE "animals" (
   "animal_id" SERIAL PRIMARY KEY,
   "animal_name" varchar(30) UNIQUE,
-  "picture" varchar(30),
+  "picture" varchar(60),
   "description" varchar(50),
   "diet_id" int,
   "scientific_name" varchar(30),
@@ -17,7 +17,7 @@ CREATE TABLE "animals" (
   "family_id" int,
   "size_id" int,
   "size_description" varchar(50),
-  "region" varchar(30)
+  "region" varchar(60)
 );
 
 CREATE TABLE "genus" (
