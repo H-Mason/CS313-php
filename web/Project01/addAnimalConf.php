@@ -18,7 +18,7 @@
     $filepath = "../project1Data/";
 
     $region = savePic($filePath, 'region');
-    $picture = savePic($filePath, 'picture');
+    //$picture = savePic($filePath, 'picture');
 
     function savePic($filepath, $picName) {
         $target_file = $filepath . basename($_FILES[$picName]["name"]);
