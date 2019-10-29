@@ -28,10 +28,8 @@
         if(isset($_POST["addAnimal"])) {
             $check = getimagesize($_FILES[$picName]["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
                 $uploadOk = 0;
             }
         }
@@ -45,26 +43,27 @@
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-        // // Allow certain file formats
-        // if($imageFileType != "jpg" && $imageFileType != "png" 
-        // && $imageFileType != "jpeg") {
-        //     echo "Sorry, only JPG, JPEG, & PNG files are allowed.";
-        //     $uploadOk = 0;
-        // }
-        // // Check if $uploadOk is set to 0 by an error
-        // if ($uploadOk == 0) {
-        //     echo "Sorry, your file was not uploaded.";
-        // // if everything is ok, try to upload file
-        // } else {
-        //     if (move_uploaded_file($_FILES[$picName]["tmp_name"], $target_file)) {
-        //         echo "The file ". basename( $_FILES[$picName]["name"]). " has been uploaded.";
-        //     } else {
-        //         echo "Sorry, there was an error uploading your file.";
-        //     }
-        // }
+        // Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" 
+        && $imageFileType != "jpeg") {
+            echo "Sorry, only JPG, JPEG, & PNG files are allowed.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES[$picName]["tmp_name"], $target_file)) {
+                echo "The file ". basename( $_FILES[$picName]["name"]). " has been uploaded.";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
         return $target_file;
     }
 
+    echo $region;
     $filename =  $name . "Desc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
