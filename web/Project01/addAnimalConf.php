@@ -20,15 +20,16 @@
     $region = savePic($filePath, 'region');
     //$picture = savePic($filePath, 'picture');
 
-    function savePic($filepath, $picName) {
-        $target_file = $filepath . basename($_FILES[$picName]["name"]);
-        echo $target_file;
+    function savePic($target_dir, $picName) {
+        $target_file = $target_dir . basename($_FILES[$picName]["name"]);
+        echo $target_dir;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
         if(isset($_POST["addAnimal"])) {
             $check = getimagesize($_FILES[$picName]["tmp_name"]);
             if($check !== false) {
+                echo 'false';
                 $uploadOk = 1;
             } else {
                 $uploadOk = 0;
@@ -64,7 +65,6 @@
         return $target_file;
     }
 
-    echo $region;
     $filename =  $name . "Desc.txt";
     //add the descriptions to files
     $descFile = fopen(($filepath . $filename), "w");
