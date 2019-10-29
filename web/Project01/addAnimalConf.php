@@ -16,7 +16,7 @@
     $orderId;
     $familyId;
     $filepath = "../project1Data/";
-
+    $target_dir = "../project1Data/";
     $region = savePic($filePath, 'region');
     //$picture = savePic($filePath, 'picture');
 
