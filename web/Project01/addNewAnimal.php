@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Add New Animal to Database</h1>
-    <div><form action="addAnimalConf.php" method="post"> 
+    <div><form action="addAnimalConf.php" method="post" enctype="multipart/form-data"> 
         <table>
         <tr>
             <td class="tLeft">Animal Name: </td>
@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <td class="tLeft">Picture:</td> 
-            <td class="tRight">User upload not supported.</td>
+            <td class="tRight"><input type="file" name="picture" id="picture"></td>
         </tr>
         <tr>
             <td class="tLeft">Diet:</td>
@@ -70,7 +70,7 @@
         </tr>
         <tr>
             <td class="tLeft">Region Picture:</td>
-            <td class="tRight">User upload not supported.</td>
+            <td class="tRight"><input type="file" name="region" id="region"></td>
         </tr>
         </table>
         <input type="submit" class="directory" id="directory" value="Add Animal">
