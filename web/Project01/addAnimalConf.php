@@ -45,12 +45,12 @@
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" 
-        && $imageFileType != "jpeg") {
-            echo "Sorry, only JPG, JPEG, & PNG files are allowed.";
-            $uploadOk = 0;
-        }
+        // // Allow certain file formats
+        // if($imageFileType != "jpg" && $imageFileType != "png" 
+        // && $imageFileType != "jpeg") {
+        //     echo "Sorry, only JPG, JPEG, & PNG files are allowed.";
+        //     $uploadOk = 0;
+        // }
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
@@ -70,7 +70,6 @@
     $descFile = fopen(($filepath . $filename), "w");
     fwrite($descFile, $descText);
     fclose($descFile);
-    echo $filename;
     $descText = $filename;
 
     $sizefilename =  $name . "SizeDesc.txt";
@@ -78,7 +77,6 @@
     $sizeDescFile = fopen(($filepath . $sizefilename), "w");
     fwrite($sizeDescFile, $sizeDescText);
     fclose($sizeDescFile);
-    echo $sizefilename;
     $sizeDescText = $sizefilename;
     //conditionally add to the small tables
     //genus
