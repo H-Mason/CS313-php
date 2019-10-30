@@ -60,7 +60,7 @@
                 echo "Sorry, there was an error uploading your file.";
             }
         }
-        return $target_file;
+        return basename($_FILES[$picName]["name"]);
     }
 
     $filename =  $name . "Desc.txt";
