@@ -16,11 +16,10 @@
     $orderId;
     $familyId;
     $filepath = "../project1Data/";
-    $target_dir = "../project1Data/";
-    $region = savePic($filePath, 'region');
-    //$picture = savePic($filePath, 'picture');
+    $region = savePic('region');
+    $picture = savePic('picture');
 
-    function savePic($target_dir, $picName) {
+    function savePic($picName) {
         $target_dir = "../project1Data/";
         $target_file = $target_dir . basename($_FILES[$picName]["name"]);
         echo $target_dir;
