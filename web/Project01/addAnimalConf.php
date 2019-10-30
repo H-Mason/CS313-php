@@ -22,6 +22,7 @@
     function savePic($picName) {
         $target_dir = "../project1Data/";
         $target_file = $target_dir . basename($_FILES[$picName]["name"]);
+        echo $target_file;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
