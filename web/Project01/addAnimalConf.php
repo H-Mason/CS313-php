@@ -21,6 +21,7 @@
     //$picture = savePic($filePath, 'picture');
 
     function savePic($target_dir, $picName) {
+        $target_dir = "../project1Data/";
         $target_file = $target_dir . basename($_FILES[$picName]["name"]);
         echo $target_dir;
         $uploadOk = 1;
