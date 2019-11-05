@@ -65,7 +65,7 @@
         if (isset($_POST['byOrder'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm'>");
             print("Order: <select class='input' name='input'>");
-            foreach($db->query("SELECT order_name FROM order") as $row)
+            foreach($db->query("SELECT order_name FROM a_order") as $row)
             {
                 print("<option value='" . $row['order_name'] . "'>" . $row['order_name'] . "</option>");
             }
