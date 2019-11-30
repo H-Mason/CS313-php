@@ -22,7 +22,7 @@
               <input type='radio' checked name='input' value='" . $row['animal_name'] . "'></span>
               <input type='submit' name='byName' class='directory' value='" . $row['animal_name'] . "'></form>");
           }
-      }
+        }
         if (isset($_POST['byName'])) {
             print("<form action='animalLookup.php' method='post' id='inputForm' >");
             print("Animal Name: <input type='text' class='input' name='input'><br><br>");
@@ -87,4 +87,4 @@
         print("<br><a href='animalLookupMain.php' class='directory' id='directory'>Return Home</a>");
     ?>
   </div>
-      </body>
+</body>
